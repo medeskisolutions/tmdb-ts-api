@@ -4,7 +4,8 @@ on:
     branches:
       - main
 jobs:
-  coverage:
+  test:
+    name: "Unit Test (Jest)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
