@@ -26,10 +26,12 @@ import tvShowSeason from "./tvShowSeason"
 import tvShows from "./tvShows"
 import watchProviders from "./watchProviders"
 
-const _tmdbAxios = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
-  params: { api_key: process.env.TMDB_API },
-  timeout: 5000,
+const tmdbAxios = axios.create({
+  baseURL:
+    typeof window === "undefined"
+      ? "https://api.themoviedb.org/3"
+      : process.env.TMDB_API_PROXY_URL,
+  params: { api_key: process.env.TMDB_API_KEY },
 })
 
 export async function tmdbGet<T>(
@@ -40,7 +42,7 @@ export async function tmdbGet<T>(
   const { data } =
     process.env.NODE_ENV === "test"
       ? { data: mock }
-      : await _tmdbAxios.get<T>(uri, { params })
+      : await tmdbAxios.get<T>(uri, { params })
   return data
 }
 
