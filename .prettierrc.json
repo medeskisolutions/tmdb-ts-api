@@ -1,0 +1,10 @@
+{
+  "importOrder": ["^~/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "printWidth": 80,
+  "proseWrap": "always",
+  "semi": false,
+  "tabWidth": 2,
+  "trailingComma": "all"
+}
