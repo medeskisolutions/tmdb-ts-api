@@ -5,5 +5,5 @@ export default {
   searchMovies: async () => {},
   multiSearch: async () => {},
   searchPeople: async () => {},
-  searchTVShows: async () => {}
+  searchTVShows: async () => {},
 }

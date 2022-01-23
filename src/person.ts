@@ -7,5 +7,5 @@ export default {
   getExternalIds: async (personId: string) => {},
   getImages: async (personId: string) => {},
   getTaggedImages: async (personId: string) => {},
-  getTranslations: async (personId: string) => {}
+  getTranslations: async (personId: string) => {},
 }

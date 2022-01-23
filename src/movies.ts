@@ -1,11 +1,11 @@
-import { tmdbGet } from ".";
-import { Country } from "./configuration/countries";
-import { Language } from "./configuration/languages";
-import { LatestMovie, mockLatestMovie } from "./movie/latest";
-import { MoviesNowPlaying, mockMoviesNowPlaying } from "./movie/now_playing";
-import { PopularMovies, mockPopularMovies } from "./movie/popular";
-import { TopRatedMovies, mockTopRatedMovies } from "./movie/top_rated";
-import { UpcomingMovies, mockUpcomingMovies } from "./movie/upcoming";
+import { tmdbGet } from "."
+import { Country } from "./configuration/countries"
+import { Language } from "./configuration/languages"
+import { LatestMovie, mockLatestMovie } from "./movie/latest"
+import { MoviesNowPlaying, mockMoviesNowPlaying } from "./movie/now_playing"
+import { PopularMovies, mockPopularMovies } from "./movie/popular"
+import { TopRatedMovies, mockTopRatedMovies } from "./movie/top_rated"
+import { UpcomingMovies, mockUpcomingMovies } from "./movie/upcoming"
 
 export default {
   /**
@@ -18,8 +18,8 @@ export default {
     return await tmdbGet<LatestMovie>(
       `/movie/latest`,
       { params },
-      mockLatestMovie
-    );
+      mockLatestMovie,
+    )
   },
 
   /**
@@ -30,13 +30,13 @@ export default {
    * @link https://developers.themoviedb.org/3/movies/get-now-playing
    */
   getNowPlaying: async (
-    params: { language?: Language; page?: number; region?: Country } = {}
+    params: { language?: Language; page?: number; region?: Country } = {},
   ) => {
     return await tmdbGet<MoviesNowPlaying>(
       `/movie/now_playing`,
       { params },
-      mockMoviesNowPlaying
-    );
+      mockMoviesNowPlaying,
+    )
   },
 
   /**
@@ -45,13 +45,13 @@ export default {
    * @link https://developers.themoviedb.org/3/movies/get-popular-movies
    */
   getPopular: async (
-    params: { language?: Language; page?: number; region?: Country } = {}
+    params: { language?: Language; page?: number; region?: Country } = {},
   ) => {
     return await tmdbGet<PopularMovies>(
       `/movie/popular`,
       { params },
-      mockPopularMovies
-    );
+      mockPopularMovies,
+    )
   },
 
   /**
@@ -60,13 +60,13 @@ export default {
    * @link https://developers.themoviedb.org/3/movies/get-top-rated-movies
    */
   getTopRated: async (
-    params: { language?: Language; page?: number; region?: Country } = {}
+    params: { language?: Language; page?: number; region?: Country } = {},
   ) => {
     return await tmdbGet<TopRatedMovies>(
       `/movie/top_rated`,
       { params },
-      mockTopRatedMovies
-    );
+      mockTopRatedMovies,
+    )
   },
 
   /**
@@ -77,12 +77,12 @@ export default {
    * @link https://developers.themoviedb.org/3/movies/get-upcoming
    */
   getUpcoming: async (
-    params: { language?: Language; page?: number; region?: Country } = {}
+    params: { language?: Language; page?: number; region?: Country } = {},
   ) => {
     return await tmdbGet<UpcomingMovies>(
       `/movie/upcoming`,
       { params },
-      mockUpcomingMovies
-    );
+      mockUpcomingMovies,
+    )
   },
-};
+}

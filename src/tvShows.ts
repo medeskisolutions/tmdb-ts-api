@@ -1,10 +1,10 @@
-import { tmdbGet } from ".";
-import { Language } from "./configuration/languages";
-import { TvShowsAiringToday, mockTvShowsAiringToday } from "./tv/airing_today";
-import { LatestTvShow, mockLatestTvShow } from "./tv/latest";
-import { TvShowsOnTheAir, mockTvShowsOnTheAir } from "./tv/on_the_air";
-import { PopularTvShows, mockPopularTvShows } from "./tv/popular";
-import { TopRatedTvShows, mockTopRatedTvShows } from "./tv/top_rated";
+import { tmdbGet } from "."
+import { Language } from "./configuration/languages"
+import { TvShowsAiringToday, mockTvShowsAiringToday } from "./tv/airing_today"
+import { LatestTvShow, mockLatestTvShow } from "./tv/latest"
+import { TvShowsOnTheAir, mockTvShowsOnTheAir } from "./tv/on_the_air"
+import { PopularTvShows, mockPopularTvShows } from "./tv/popular"
+import { TopRatedTvShows, mockTopRatedTvShows } from "./tv/top_rated"
 
 export default {
   /**
@@ -17,8 +17,8 @@ export default {
     return await tmdbGet<LatestTvShow>(
       `/tv/latest`,
       { params },
-      mockLatestTvShow
-    );
+      mockLatestTvShow,
+    )
   },
 
   /**
@@ -29,14 +29,14 @@ export default {
    * @link https://developers.themoviedb.org/3/tv/get-tv-airing-today
    */
   getTvShowsAiringToday: async (
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     // TODO add timezone param
     return await tmdbGet<TvShowsAiringToday>(
       `/tv/airing_today`,
       { params },
-      mockTvShowsAiringToday
-    );
+      mockTvShowsAiringToday,
+    )
   },
 
   /**
@@ -48,13 +48,13 @@ export default {
    * @link https://developers.themoviedb.org/3/tv/get-tv-airing-today
    */
   getTvShowsOnTheAir: async (
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     return await tmdbGet<TvShowsOnTheAir>(
       `/tv/on_the_air`,
       { params },
-      mockTvShowsOnTheAir
-    );
+      mockTvShowsOnTheAir,
+    )
   },
 
   /**
@@ -66,8 +66,8 @@ export default {
     return await tmdbGet<PopularTvShows>(
       `/tv/popular`,
       { params },
-      mockPopularTvShows
-    );
+      mockPopularTvShows,
+    )
   },
 
   /**
@@ -79,7 +79,7 @@ export default {
     return await tmdbGet<TopRatedTvShows>(
       `/tv/top_rated`,
       { params },
-      mockTopRatedTvShows
-    );
+      mockTopRatedTvShows,
+    )
   },
-};
+}

@@ -16,23 +16,23 @@ export interface TvShowEpisodeGroups {
 export const mockTvShowEpisodeGroups: TvShowEpisodeGroups = {
   results: [
     {
-      description: '',
+      description: "",
       episode_count: 0,
       group_count: 0,
-      id: '60331bb741ad8d004032b33c',
-      name: 'temporada 9 completa 27 episodios',
+      id: "60331bb741ad8d004032b33c",
+      name: "temporada 9 completa 27 episodios",
       network: null,
-      type: 2
+      type: 2,
     },
     {
-      description: '',
+      description: "",
       episode_count: 69,
       group_count: 9,
-      id: '6054b076fab3fa003d4f10d7',
-      name: 'Blu-ray Order',
+      id: "6054b076fab3fa003d4f10d7",
+      name: "Blu-ray Order",
       network: null,
-      type: 3
-    }
+      type: 3,
+    },
   ],
-  id: 2316
+  id: 2316,
 }

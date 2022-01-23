@@ -1,4 +1,4 @@
 export default {
   getMovieCertifications: async () => {},
-  getTvShowCertifications: async () => {}
+  getTvShowCertifications: async () => {},
 }

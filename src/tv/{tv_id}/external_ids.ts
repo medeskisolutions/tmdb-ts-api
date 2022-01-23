@@ -12,12 +12,12 @@ export interface TvShowExternalIds {
 
 export const mockTvShowExternalIds: TvShowExternalIds = {
   id: 2316,
-  imdb_id: 'tt0386676',
-  freebase_mid: '/m/08jgk1',
-  freebase_id: '/en/the_office',
+  imdb_id: "tt0386676",
+  freebase_mid: "/m/08jgk1",
+  freebase_id: "/en/the_office",
   tvdb_id: 73244,
   tvrage_id: 6061,
-  facebook_id: 'TheOfficeTV',
-  instagram_id: 'theoffice',
-  twitter_id: 'theofficetv'
+  facebook_id: "TheOfficeTV",
+  instagram_id: "theoffice",
+  twitter_id: "theofficetv",
 }

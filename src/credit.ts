@@ -1,3 +1,3 @@
 export default {
-  getCredit: async () => {}
+  getCredit: async () => {},
 }

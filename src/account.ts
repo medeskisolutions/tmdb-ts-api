@@ -9,5 +9,5 @@ export default {
   getRatedTvShowEpisodes: async () => {},
   getMovieWatchlist: async () => {},
   getTvShowWatchlist: async () => {},
-  addToWatchlist: async () => {}
+  addToWatchlist: async () => {},
 }

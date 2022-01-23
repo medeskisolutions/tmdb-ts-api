@@ -1,14 +1,14 @@
-import { tmdbGet } from ".";
-import { Language } from "./configuration/languages";
-import { MovieDetails, mockMovieDetails } from "./movie/{movie_id}";
-import { MovieCredits, mockMovieCredits } from "./movie/{movie_id}/credits";
-import { MovieImages, mockMovieImages } from "./movie/{movie_id}/images";
-import { MovieKeywords, mockMovieKeywords } from "./movie/{movie_id}/keywords";
-import { MovieLists, mockMovieLists } from "./movie/{movie_id}/lists";
+import { tmdbGet } from "."
+import { Language } from "./configuration/languages"
+import { MovieDetails, mockMovieDetails } from "./movie/{movie_id}"
+import { MovieCredits, mockMovieCredits } from "./movie/{movie_id}/credits"
+import { MovieImages, mockMovieImages } from "./movie/{movie_id}/images"
+import { MovieKeywords, mockMovieKeywords } from "./movie/{movie_id}/keywords"
+import { MovieLists, mockMovieLists } from "./movie/{movie_id}/lists"
 import {
   MovieRecommendations,
   mockMovieRecommendations,
-} from "./movie/{movie_id}/recommendations";
+} from "./movie/{movie_id}/recommendations"
 
 export default {
   /**
@@ -20,8 +20,8 @@ export default {
     return await tmdbGet<MovieDetails>(
       `/movie/${movieId}`,
       { params },
-      mockMovieDetails
-    );
+      mockMovieDetails,
+    )
   },
 
   getAccountState: async () => {},
@@ -37,8 +37,8 @@ export default {
     return await tmdbGet<MovieCredits>(
       `/movie/${movieId}/credits`,
       { params },
-      mockMovieCredits
-    );
+      mockMovieCredits,
+    )
   },
 
   getExternalIds: async () => {},
@@ -50,13 +50,13 @@ export default {
    */
   getImages: async (
     movieId: string,
-    params: { language?: Language; include_image_language?: string } = {}
+    params: { language?: Language; include_image_language?: string } = {},
   ) => {
     return await tmdbGet<MovieImages>(
       `/movie/${movieId}/images`,
       { params },
-      mockMovieImages
-    );
+      mockMovieImages,
+    )
   },
 
   /**
@@ -68,8 +68,8 @@ export default {
     return await tmdbGet<MovieKeywords>(
       `/movie/${movieId}/keywords`,
       {},
-      mockMovieKeywords
-    );
+      mockMovieKeywords,
+    )
   },
 
   /**
@@ -79,13 +79,13 @@ export default {
    */
   getLists: async (
     movieId: string,
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     return await tmdbGet<MovieLists>(
       `/movie/${movieId}/lists`,
       { params },
-      mockMovieLists
-    );
+      mockMovieLists,
+    )
   },
 
   /**
@@ -95,13 +95,13 @@ export default {
    */
   getRecommendations: async (
     movieId: string,
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     return await tmdbGet<MovieRecommendations>(
       `/movie/${movieId}/recommendations`,
       { params },
-      mockMovieRecommendations
-    );
+      mockMovieRecommendations,
+    )
   },
 
   getReleaseDates: async () => {},
@@ -112,4 +112,4 @@ export default {
   getWatchProviders: async () => {},
   rateMovie: async () => {},
   deleteRating: async () => {},
-};
+}

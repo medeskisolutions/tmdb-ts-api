@@ -1,4 +1,4 @@
 export default {
   discoverMovies: async () => {},
-  discoverTvShows: async () => {}
+  discoverTvShows: async () => {},
 }

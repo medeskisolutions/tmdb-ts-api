@@ -3,5 +3,5 @@ export default {
   createRequestToken: async () => {},
   createSession: async () => {},
   createSessionWithLogin: async () => {},
-  deleteSession: async () => {}
+  deleteSession: async () => {},
 }

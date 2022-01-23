@@ -1,44 +1,44 @@
-import { tmdbGet } from ".";
-import { Language } from "./configuration/languages";
-import { TvShowDetails, mockTvShowDetails } from "./tv/{tv_id}";
+import { tmdbGet } from "."
+import { Language } from "./configuration/languages"
+import { TvShowDetails, mockTvShowDetails } from "./tv/{tv_id}"
 import {
   TvShowAggregateCredits,
   mockTvShowAggregateCredits,
-} from "./tv/{tv_id}/aggregate_credits";
+} from "./tv/{tv_id}/aggregate_credits"
 import {
   TvShowAlternativeTitles,
   mockTvShowAlternativeTitles,
-} from "./tv/{tv_id}/alternative_titles";
+} from "./tv/{tv_id}/alternative_titles"
 import {
   TvShowContentRatings,
   mockTvShowContentRatings,
-} from "./tv/{tv_id}/content_ratings";
-import { TvShowCredits, mockTvShowCredits } from "./tv/{tv_id}/credits";
+} from "./tv/{tv_id}/content_ratings"
+import { TvShowCredits, mockTvShowCredits } from "./tv/{tv_id}/credits"
 import {
   TvShowEpisodeGroups,
   mockTvShowEpisodeGroups,
-} from "./tv/{tv_id}/episode_groups";
+} from "./tv/{tv_id}/episode_groups"
 import {
   TvShowExternalIds,
   mockTvShowExternalIds,
-} from "./tv/{tv_id}/external_ids";
-import { TvShowImages, mockTvShowImages } from "./tv/{tv_id}/images";
-import { TvShowKeywords, mockTvShowKeywords } from "./tv/{tv_id}/keywords";
+} from "./tv/{tv_id}/external_ids"
+import { TvShowImages, mockTvShowImages } from "./tv/{tv_id}/images"
+import { TvShowKeywords, mockTvShowKeywords } from "./tv/{tv_id}/keywords"
 import {
   TvShowRecommendations,
   mockTvShowRecommendations,
-} from "./tv/{tv_id}/recommendations";
-import { TvShowReviews, mockTvShowReviews } from "./tv/{tv_id}/reviews";
+} from "./tv/{tv_id}/recommendations"
+import { TvShowReviews, mockTvShowReviews } from "./tv/{tv_id}/reviews"
 import {
   TvShowScreenedTheatrically,
   mockTvShowScreenedTheatrically,
-} from "./tv/{tv_id}/screened_theatrically";
-import { SimilarTvShows, mockSimilarTvShows } from "./tv/{tv_id}/similar";
+} from "./tv/{tv_id}/screened_theatrically"
+import { SimilarTvShows, mockSimilarTvShows } from "./tv/{tv_id}/similar"
 import {
   TvShowTranslations,
   mockTvShowTranslations,
-} from "./tv/{tv_id}/translations";
-import { TvShowVideos, mockTvShowVideos } from "./tv/{tv_id}/videos";
+} from "./tv/{tv_id}/translations"
+import { TvShowVideos, mockTvShowVideos } from "./tv/{tv_id}/videos"
 
 export default {
   /**
@@ -48,14 +48,14 @@ export default {
    */
   getDetails: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     // TODO add append to response values
     return await tmdbGet<TvShowDetails>(
       `/tv/${tvShowId}`,
       { params },
-      mockTvShowDetails
-    );
+      mockTvShowDetails,
+    )
   },
 
   getAccountStates: async () => {},
@@ -72,13 +72,13 @@ export default {
    */
   getAggregateCredits: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     return await tmdbGet<TvShowAggregateCredits>(
       `/tv/${tvShowId}/aggregate_credits`,
       { params },
-      mockTvShowAggregateCredits
-    );
+      mockTvShowAggregateCredits,
+    )
   },
 
   /**
@@ -88,13 +88,13 @@ export default {
    */
   getAlternativeTitles: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     return await tmdbGet<TvShowAlternativeTitles>(
       `/tv/${tvShowId}/alternative_titles`,
       { params },
-      mockTvShowAlternativeTitles
-    );
+      mockTvShowAlternativeTitles,
+    )
   },
 
   getChanges: async () => {},
@@ -106,13 +106,13 @@ export default {
    */
   getContentRatings: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     return await tmdbGet<TvShowCredits>(
       `/tv/${tvShowId}/content_ratings`,
       { params },
-      mockTvShowCredits
-    );
+      mockTvShowCredits,
+    )
   },
 
   /**
@@ -122,13 +122,13 @@ export default {
    */
   getCredits: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     return await tmdbGet<TvShowContentRatings>(
       `/tv/${tvShowId}/credits`,
       { params },
-      mockTvShowContentRatings
-    );
+      mockTvShowContentRatings,
+    )
   },
 
   /**
@@ -140,13 +140,13 @@ export default {
    */
   getEpisodeGroups: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     return await tmdbGet<TvShowEpisodeGroups>(
       `/tv/${tvShowId}/episode_groups`,
       { params },
-      mockTvShowEpisodeGroups
-    );
+      mockTvShowEpisodeGroups,
+    )
   },
 
   /**
@@ -156,13 +156,13 @@ export default {
    */
   getExternalIds: async (
     tvShowId: string,
-    params: { language?: Language } = {}
+    params: { language?: Language } = {},
   ) => {
     return await tmdbGet<TvShowExternalIds>(
       `/tv/${tvShowId}/external_ids`,
       { params },
-      mockTvShowExternalIds
-    );
+      mockTvShowExternalIds,
+    )
   },
 
   /**
@@ -174,8 +174,8 @@ export default {
     return await tmdbGet<TvShowImages>(
       `/tv/${tvShowId}/images`,
       { params },
-      mockTvShowImages
-    );
+      mockTvShowImages,
+    )
   },
 
   /**
@@ -187,8 +187,8 @@ export default {
     return await tmdbGet<TvShowKeywords>(
       `/tv/${tvShowId}/images`,
       {},
-      mockTvShowKeywords
-    );
+      mockTvShowKeywords,
+    )
   },
 
   /**
@@ -198,13 +198,13 @@ export default {
    */
   getRecommendations: async (
     tvShowId: string,
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     return await tmdbGet<TvShowRecommendations>(
       `/tv/${tvShowId}/recommendations`,
       { params },
-      mockTvShowRecommendations
-    );
+      mockTvShowRecommendations,
+    )
   },
 
   /**
@@ -214,13 +214,13 @@ export default {
    */
   getReviews: async (
     tvShowId: string,
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     return await tmdbGet<TvShowReviews>(
       `/tv/${tvShowId}/reviews`,
       { params },
-      mockTvShowReviews
-    );
+      mockTvShowReviews,
+    )
   },
 
   /**
@@ -232,8 +232,8 @@ export default {
     return await tmdbGet<TvShowScreenedTheatrically>(
       `/tv/${tvShowId}/screened_theatrically`,
       {},
-      mockTvShowScreenedTheatrically
-    );
+      mockTvShowScreenedTheatrically,
+    )
   },
 
   /**
@@ -244,13 +244,13 @@ export default {
    */
   getSimilar: async (
     tvShowId: string,
-    params: { language?: Language; page?: number } = {}
+    params: { language?: Language; page?: number } = {},
   ) => {
     return await tmdbGet<SimilarTvShows>(
       `/tv/${tvShowId}/similar`,
       { params },
-      mockSimilarTvShows
-    );
+      mockSimilarTvShows,
+    )
   },
 
   /**
@@ -262,8 +262,8 @@ export default {
     return await tmdbGet<TvShowTranslations>(
       `/tv/${tvShowId}/translations`,
       {},
-      mockTvShowTranslations
-    );
+      mockTvShowTranslations,
+    )
   },
 
   /**
@@ -275,8 +275,8 @@ export default {
     return await tmdbGet<TvShowVideos>(
       `/tv/${tvShowId}/watch/providers`,
       { params },
-      mockTvShowVideos
-    );
+      mockTvShowVideos,
+    )
   },
 
   /**
@@ -294,10 +294,10 @@ export default {
     return await tmdbGet<TvShowVideos>(
       `/tv/${tvShowId}/watch/providers`,
       {},
-      mockTvShowVideos
-    );
+      mockTvShowVideos,
+    )
   },
 
   rateTvShow: async (tvShowId: string) => {},
   deleteRating: async (tvShowId: string) => {},
-};
+}

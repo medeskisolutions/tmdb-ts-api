@@ -1,18 +1,18 @@
-import { tmdbGet } from ".";
-import { ApiConfiguration, mockApiConfiguration } from "./configuration/api";
+import { tmdbGet } from "."
+import { ApiConfiguration, mockApiConfiguration } from "./configuration/api"
 import {
   CountriesConfiguration,
   mockCountriesConfiguration,
-} from "./configuration/countries";
-import { JobsConfiguration, mockJobsConfiguration } from "./configuration/jobs";
+} from "./configuration/countries"
+import { JobsConfiguration, mockJobsConfiguration } from "./configuration/jobs"
 import {
   LanguagesConfiguration,
   mockLanguagesConfiguration,
-} from "./configuration/languages";
+} from "./configuration/languages"
 import {
   PrimaryTranslations,
   mockPrimaryTranslations,
-} from "./configuration/primary_translations";
+} from "./configuration/primary_translations"
 
 export default {
   /**
@@ -24,8 +24,8 @@ export default {
     return await tmdbGet<ApiConfiguration>(
       `/configuration`,
       {},
-      mockApiConfiguration
-    );
+      mockApiConfiguration,
+    )
   },
 
   /**
@@ -37,8 +37,8 @@ export default {
     return await tmdbGet<CountriesConfiguration>(
       `/configuration/countries`,
       {},
-      mockCountriesConfiguration
-    );
+      mockCountriesConfiguration,
+    )
   },
 
   /**
@@ -50,8 +50,8 @@ export default {
     return await tmdbGet<JobsConfiguration[]>(
       `/configuration/jobs`,
       {},
-      mockJobsConfiguration
-    );
+      mockJobsConfiguration,
+    )
   },
 
   /**
@@ -63,8 +63,8 @@ export default {
     return await tmdbGet<LanguagesConfiguration>(
       `/configuration/jobs`,
       {},
-      mockLanguagesConfiguration
-    );
+      mockLanguagesConfiguration,
+    )
   },
 
   /**
@@ -76,8 +76,8 @@ export default {
     return await tmdbGet<PrimaryTranslations>(
       `/configuration/jobs`,
       {},
-      mockPrimaryTranslations
-    );
+      mockPrimaryTranslations,
+    )
   },
 
   /**
@@ -89,7 +89,7 @@ export default {
     return await tmdbGet<PrimaryTranslations>(
       `/configuration/timezones`,
       {},
-      mockPrimaryTranslations
-    );
+      mockPrimaryTranslations,
+    )
   },
-};
+}

@@ -1,4 +1,4 @@
 export default {
   getMovieGenres: async () => {},
-  getTvShowGenres: async () => {}
+  getTvShowGenres: async () => {},
 }

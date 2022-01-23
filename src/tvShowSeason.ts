@@ -1,4 +1,4 @@
-import tvShowEpisode from './tvShowEpisode'
+import tvShowEpisode from "./tvShowEpisode"
 
 export default {
   getDetails: async (tvShowId: string, seasonNumber: number) => {},
@@ -11,5 +11,5 @@ export default {
   getTranslations: async (tvShowId: string, seasonNumber: number) => {},
   getVideos: async (tvShowId: string, seasonNumber: number) => {},
 
-  episode: tvShowEpisode
+  episode: tvShowEpisode,
 }

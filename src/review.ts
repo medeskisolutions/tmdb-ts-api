@@ -1,3 +1,3 @@
 export default {
-  getDetails: async (reviewId: string) => {}
+  getDetails: async (reviewId: string) => {},
 }

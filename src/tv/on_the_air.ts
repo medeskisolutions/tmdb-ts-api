@@ -1,24 +1,24 @@
 export interface Result {
-  backdrop_path: string | null;
-  first_air_date: string;
-  genre_ids: number[];
-  id: number;
-  name: string;
-  origin_country: string[];
-  original_language: string;
-  original_name: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  vote_average: number;
-  vote_count: number;
+  backdrop_path: string | null
+  first_air_date: string
+  genre_ids: number[]
+  id: number
+  name: string
+  origin_country: string[]
+  original_language: string
+  original_name: string
+  overview: string
+  popularity: number
+  poster_path: string
+  vote_average: number
+  vote_count: number
 }
 
 export interface TvShowsOnTheAir {
-  page: number;
-  results: Result[];
-  total_pages: number;
-  total_results: number;
+  page: number
+  results: Result[]
+  total_pages: number
+  total_results: number
 }
 
 export const mockTvShowsOnTheAir: TvShowsOnTheAir = {
@@ -343,4 +343,4 @@ export const mockTvShowsOnTheAir: TvShowsOnTheAir = {
   ],
   total_pages: 55,
   total_results: 1081,
-};
+}

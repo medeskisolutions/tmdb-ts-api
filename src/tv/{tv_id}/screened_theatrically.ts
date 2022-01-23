@@ -5,5 +5,5 @@ export interface TvShowScreenedTheatrically {
 
 export const mockTvShowScreenedTheatrically = {
   id: 2316,
-  results: []
+  results: [],
 }

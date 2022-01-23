@@ -1,3 +1,3 @@
 export default {
-  findByExternalId: async () => {}
+  findByExternalId: async () => {},
 }

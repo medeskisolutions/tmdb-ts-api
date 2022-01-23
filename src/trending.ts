@@ -1,3 +1,3 @@
 export default {
-  getTrending: async () => {}
+  getTrending: async () => {},
 }
