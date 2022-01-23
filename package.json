@@ -5,6 +5,10 @@
   "license": "MIT",
   "description": "A TypeScript API for working with The Movie Database API (tmdb)",
   "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medeskisolutions/tmdb-ts-api.git"
+  },
   "keywords": [
     "api",
     "tmbd",
