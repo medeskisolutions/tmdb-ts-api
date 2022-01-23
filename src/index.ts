@@ -1,4 +1,6 @@
 import axios, { AxiosInstance } from "axios"
+import * as dotenv from "dotenv"
+import invariant from "tiny-invariant"
 
 import account from "./account"
 import authentication from "./authentication"
@@ -26,13 +28,27 @@ import tvShowSeason from "./tvShowSeason"
 import tvShows from "./tvShows"
 import watchProviders from "./watchProviders"
 
-const tmdbAxios = axios.create({
-  baseURL:
+dotenv.config()
+
+const createTmdbAxios = () => {
+  invariant(process.env.TMDB_API_KEY, "process.env.TMDB_API_KEY not found")
+
+  invariant(
+    process.env.TMDB_API_PROXY_URL,
+    "process.env.TMDB_API_PROXY_URL not found",
+  )
+
+  const baseURL =
     typeof window === "undefined"
       ? "https://api.themoviedb.org/3"
-      : process.env.TMDB_API_PROXY_URL,
-  params: { api_key: process.env.TMDB_API_KEY },
-})
+      : process.env.TMDB_API_PROXY_URL
+
+  const api_key: string = process.env.TMDB_API_KEY
+
+  return axios.create({ baseURL, params: { api_key } })
+}
+
+const tmdbAxios = createTmdbAxios()
 
 export async function tmdbGet<T>(
   uri: string,
