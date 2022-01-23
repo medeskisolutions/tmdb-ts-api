@@ -1,44 +1,44 @@
-import { tmdbGet } from '.'
-import { Language } from './language'
-import { TvShowDetails, mockTvShowDetails } from './tv/{tv_id}'
+import { tmdbGet } from ".";
+import { Language } from "./configuration/languages";
+import { TvShowDetails, mockTvShowDetails } from "./tv/{tv_id}";
 import {
   TvShowAggregateCredits,
-  mockTvShowAggregateCredits
-} from './tv/{tv_id}/aggregate_credits'
+  mockTvShowAggregateCredits,
+} from "./tv/{tv_id}/aggregate_credits";
 import {
   TvShowAlternativeTitles,
-  mockTvShowAlternativeTitles
-} from './tv/{tv_id}/alternative_titles'
+  mockTvShowAlternativeTitles,
+} from "./tv/{tv_id}/alternative_titles";
 import {
   TvShowContentRatings,
-  mockTvShowContentRatings
-} from './tv/{tv_id}/content_ratings'
-import { TvShowCredits, mockTvShowCredits } from './tv/{tv_id}/credits'
+  mockTvShowContentRatings,
+} from "./tv/{tv_id}/content_ratings";
+import { TvShowCredits, mockTvShowCredits } from "./tv/{tv_id}/credits";
 import {
   TvShowEpisodeGroups,
-  mockTvShowEpisodeGroups
-} from './tv/{tv_id}/episode_groups'
+  mockTvShowEpisodeGroups,
+} from "./tv/{tv_id}/episode_groups";
 import {
   TvShowExternalIds,
-  mockTvShowExternalIds
-} from './tv/{tv_id}/external_ids'
-import { TvShowImages, mockTvShowImages } from './tv/{tv_id}/images'
-import { TvShowKeywords, mockTvShowKeywords } from './tv/{tv_id}/keywords'
+  mockTvShowExternalIds,
+} from "./tv/{tv_id}/external_ids";
+import { TvShowImages, mockTvShowImages } from "./tv/{tv_id}/images";
+import { TvShowKeywords, mockTvShowKeywords } from "./tv/{tv_id}/keywords";
 import {
   TvShowRecommendations,
-  mockTvShowRecommendations
-} from './tv/{tv_id}/recommendations'
-import { TvShowReviews, mockTvShowReviews } from './tv/{tv_id}/reviews'
+  mockTvShowRecommendations,
+} from "./tv/{tv_id}/recommendations";
+import { TvShowReviews, mockTvShowReviews } from "./tv/{tv_id}/reviews";
 import {
   TvShowScreenedTheatrically,
-  mockTvShowScreenedTheatrically
-} from './tv/{tv_id}/screened_theatrically'
-import { SimilarTvShows, mockSimilarTvShows } from './tv/{tv_id}/similar'
+  mockTvShowScreenedTheatrically,
+} from "./tv/{tv_id}/screened_theatrically";
+import { SimilarTvShows, mockSimilarTvShows } from "./tv/{tv_id}/similar";
 import {
   TvShowTranslations,
-  mockTvShowTranslations
-} from './tv/{tv_id}/translations'
-import { TvShowVideos, mockTvShowVideos } from './tv/{tv_id}/videos'
+  mockTvShowTranslations,
+} from "./tv/{tv_id}/translations";
+import { TvShowVideos, mockTvShowVideos } from "./tv/{tv_id}/videos";
 
 export default {
   /**
@@ -55,7 +55,7 @@ export default {
       `/tv/${tvShowId}`,
       { params },
       mockTvShowDetails
-    )
+    );
   },
 
   getAccountStates: async () => {},
@@ -78,7 +78,7 @@ export default {
       `/tv/${tvShowId}/aggregate_credits`,
       { params },
       mockTvShowAggregateCredits
-    )
+    );
   },
 
   /**
@@ -94,7 +94,7 @@ export default {
       `/tv/${tvShowId}/alternative_titles`,
       { params },
       mockTvShowAlternativeTitles
-    )
+    );
   },
 
   getChanges: async () => {},
@@ -112,7 +112,7 @@ export default {
       `/tv/${tvShowId}/content_ratings`,
       { params },
       mockTvShowCredits
-    )
+    );
   },
 
   /**
@@ -128,7 +128,7 @@ export default {
       `/tv/${tvShowId}/credits`,
       { params },
       mockTvShowContentRatings
-    )
+    );
   },
 
   /**
@@ -146,7 +146,7 @@ export default {
       `/tv/${tvShowId}/episode_groups`,
       { params },
       mockTvShowEpisodeGroups
-    )
+    );
   },
 
   /**
@@ -162,7 +162,7 @@ export default {
       `/tv/${tvShowId}/external_ids`,
       { params },
       mockTvShowExternalIds
-    )
+    );
   },
 
   /**
@@ -175,7 +175,7 @@ export default {
       `/tv/${tvShowId}/images`,
       { params },
       mockTvShowImages
-    )
+    );
   },
 
   /**
@@ -188,7 +188,7 @@ export default {
       `/tv/${tvShowId}/images`,
       {},
       mockTvShowKeywords
-    )
+    );
   },
 
   /**
@@ -204,7 +204,7 @@ export default {
       `/tv/${tvShowId}/recommendations`,
       { params },
       mockTvShowRecommendations
-    )
+    );
   },
 
   /**
@@ -220,7 +220,7 @@ export default {
       `/tv/${tvShowId}/reviews`,
       { params },
       mockTvShowReviews
-    )
+    );
   },
 
   /**
@@ -233,7 +233,7 @@ export default {
       `/tv/${tvShowId}/screened_theatrically`,
       {},
       mockTvShowScreenedTheatrically
-    )
+    );
   },
 
   /**
@@ -250,7 +250,7 @@ export default {
       `/tv/${tvShowId}/similar`,
       { params },
       mockSimilarTvShows
-    )
+    );
   },
 
   /**
@@ -263,7 +263,7 @@ export default {
       `/tv/${tvShowId}/translations`,
       {},
       mockTvShowTranslations
-    )
+    );
   },
 
   /**
@@ -276,7 +276,7 @@ export default {
       `/tv/${tvShowId}/watch/providers`,
       { params },
       mockTvShowVideos
-    )
+    );
   },
 
   /**
@@ -295,9 +295,9 @@ export default {
       `/tv/${tvShowId}/watch/providers`,
       {},
       mockTvShowVideos
-    )
+    );
   },
 
   rateTvShow: async (tvShowId: string) => {},
-  deleteRating: async (tvShowId: string) => {}
-}
+  deleteRating: async (tvShowId: string) => {},
+};

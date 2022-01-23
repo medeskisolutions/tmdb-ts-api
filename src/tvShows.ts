@@ -1,10 +1,10 @@
-import { tmdbGet } from '.'
-import { Language } from './language'
-import { TvShowsAiringToday, mockTvShowsAiringToday } from './tv/airing_today'
-import { LatestTvShow, mockLatestTvShow } from './tv/latest'
-import { TvShowsOnTheAir, mockTvShowsOnTheAir } from './tv/on_the_air'
-import { PopularTvShows, mockPopularTvShows } from './tv/popular'
-import { TopRatedTvShows, mockTopRatedTvShows } from './tv/top_rated'
+import { tmdbGet } from ".";
+import { Language } from "./configuration/languages";
+import { TvShowsAiringToday, mockTvShowsAiringToday } from "./tv/airing_today";
+import { LatestTvShow, mockLatestTvShow } from "./tv/latest";
+import { TvShowsOnTheAir, mockTvShowsOnTheAir } from "./tv/on_the_air";
+import { PopularTvShows, mockPopularTvShows } from "./tv/popular";
+import { TopRatedTvShows, mockTopRatedTvShows } from "./tv/top_rated";
 
 export default {
   /**
@@ -18,7 +18,7 @@ export default {
       `/tv/latest`,
       { params },
       mockLatestTvShow
-    )
+    );
   },
 
   /**
@@ -36,7 +36,7 @@ export default {
       `/tv/airing_today`,
       { params },
       mockTvShowsAiringToday
-    )
+    );
   },
 
   /**
@@ -54,7 +54,7 @@ export default {
       `/tv/on_the_air`,
       { params },
       mockTvShowsOnTheAir
-    )
+    );
   },
 
   /**
@@ -67,7 +67,7 @@ export default {
       `/tv/popular`,
       { params },
       mockPopularTvShows
-    )
+    );
   },
 
   /**
@@ -80,6 +80,6 @@ export default {
       `/tv/top_rated`,
       { params },
       mockTopRatedTvShows
-    )
-  }
-}
+    );
+  },
+};

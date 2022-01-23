@@ -1,18 +1,18 @@
-import { tmdbGet } from '.'
-import { ApiConfiguration, mockApiConfiguration } from './configuration/api'
+import { tmdbGet } from ".";
+import { ApiConfiguration, mockApiConfiguration } from "./configuration/api";
 import {
   CountriesConfiguration,
-  mockCountriesConfiguration
-} from './configuration/countries'
-import { JobsConfiguration, mockJobsConfiguration } from './configuration/jobs'
+  mockCountriesConfiguration,
+} from "./configuration/countries";
+import { JobsConfiguration, mockJobsConfiguration } from "./configuration/jobs";
 import {
   LanguagesConfiguration,
-  mockLanguagesConfiguration
-} from './configuration/languages'
+  mockLanguagesConfiguration,
+} from "./configuration/languages";
 import {
   PrimaryTranslations,
-  mockPrimaryTranslations
-} from './configuration/primary_translations'
+  mockPrimaryTranslations,
+} from "./configuration/primary_translations";
 
 export default {
   /**
@@ -25,7 +25,7 @@ export default {
       `/configuration`,
       {},
       mockApiConfiguration
-    )
+    );
   },
 
   /**
@@ -38,7 +38,7 @@ export default {
       `/configuration/countries`,
       {},
       mockCountriesConfiguration
-    )
+    );
   },
 
   /**
@@ -47,11 +47,11 @@ export default {
    * @link https://developers.themoviedb.org/3/configuration/get-jobs
    */
   getJobs: async () => {
-    return await tmdbGet<JobsConfiguration>(
+    return await tmdbGet<JobsConfiguration[]>(
       `/configuration/jobs`,
       {},
       mockJobsConfiguration
-    )
+    );
   },
 
   /**
@@ -64,7 +64,7 @@ export default {
       `/configuration/jobs`,
       {},
       mockLanguagesConfiguration
-    )
+    );
   },
 
   /**
@@ -77,7 +77,7 @@ export default {
       `/configuration/jobs`,
       {},
       mockPrimaryTranslations
-    )
+    );
   },
 
   /**
@@ -90,6 +90,6 @@ export default {
       `/configuration/timezones`,
       {},
       mockPrimaryTranslations
-    )
-  }
-}
+    );
+  },
+};

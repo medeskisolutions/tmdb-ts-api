@@ -1,14 +1,14 @@
-import { tmdbGet } from '.'
-import { Language } from './configuration/languages'
-import { MovieDetails, mockMovieDetails } from './movie/{movie_id}'
-import { MovieCredits, mockMovieCredits } from './movie/{movie_id}/credits'
-import { MovieImages, mockMovieImages } from './movie/{movie_id}/images'
-import { MovieKeywords, mockMovieKeywords } from './movie/{movie_id}/keywords'
-import { MovieLists, mockMovieLists } from './movie/{movie_id}/lists'
+import { tmdbGet } from ".";
+import { Language } from "./configuration/languages";
+import { MovieDetails, mockMovieDetails } from "./movie/{movie_id}";
+import { MovieCredits, mockMovieCredits } from "./movie/{movie_id}/credits";
+import { MovieImages, mockMovieImages } from "./movie/{movie_id}/images";
+import { MovieKeywords, mockMovieKeywords } from "./movie/{movie_id}/keywords";
+import { MovieLists, mockMovieLists } from "./movie/{movie_id}/lists";
 import {
   MovieRecommendations,
-  mockMovieRecommendations
-} from './movie/{movie_id}/recommendations'
+  mockMovieRecommendations,
+} from "./movie/{movie_id}/recommendations";
 
 export default {
   /**
@@ -21,7 +21,7 @@ export default {
       `/movie/${movieId}`,
       { params },
       mockMovieDetails
-    )
+    );
   },
 
   getAccountState: async () => {},
@@ -38,7 +38,7 @@ export default {
       `/movie/${movieId}/credits`,
       { params },
       mockMovieCredits
-    )
+    );
   },
 
   getExternalIds: async () => {},
@@ -56,7 +56,7 @@ export default {
       `/movie/${movieId}/images`,
       { params },
       mockMovieImages
-    )
+    );
   },
 
   /**
@@ -69,7 +69,7 @@ export default {
       `/movie/${movieId}/keywords`,
       {},
       mockMovieKeywords
-    )
+    );
   },
 
   /**
@@ -85,7 +85,7 @@ export default {
       `/movie/${movieId}/lists`,
       { params },
       mockMovieLists
-    )
+    );
   },
 
   /**
@@ -101,7 +101,7 @@ export default {
       `/movie/${movieId}/recommendations`,
       { params },
       mockMovieRecommendations
-    )
+    );
   },
 
   getReleaseDates: async () => {},
@@ -111,5 +111,5 @@ export default {
   getVideos: async () => {},
   getWatchProviders: async () => {},
   rateMovie: async () => {},
-  deleteRating: async () => {}
-}
+  deleteRating: async () => {},
+};
