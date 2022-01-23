@@ -1,10 +1,14 @@
 {
-  "version": "1.0.0",
-  "name": "tmdb-ts",
+  "version": "0.0.1",
+  "name": "tmdb-ts-api",
   "author": "Josh Medeski<josh@medeskisolutions.com>",
   "license": "MIT",
-  "description": "Fully typed interface for working with The Movie Database API",
+  "description": "A TypeScript API for working with The Movie Database API (tmdb)",
   "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medeskisolutions/tmdb-ts-api.git"
+  },
   "keywords": [
     "api",
     "tmbd",
