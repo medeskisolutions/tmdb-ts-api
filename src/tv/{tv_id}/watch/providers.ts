@@ -1,4 +1,4 @@
-import { Region } from "~/tmdb/region"
+import { Country } from "~/configuration/countries"
 
 export interface WatchProvider {
   display_priority: number
@@ -8,7 +8,7 @@ export interface WatchProvider {
 }
 
 export type WatchProviderResults = {
-  [key in Region]?: {
+  [key in Country]?: {
     link: string
     flatrate: WatchProvider[]
     buy?: WatchProvider[]

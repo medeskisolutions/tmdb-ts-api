@@ -4,7 +4,11 @@
   "author": "Josh Medeski<josh@medeskisolutions.com>",
   "license": "MIT",
   "description": "A TypeScript API for working with The Movie Database API (tmdb)",
-  "main": "jest.config.js",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --watch"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/medeskisolutions/tmdb-ts-api.git"
@@ -14,9 +18,6 @@
     "tmbd",
     "typescript"
   ],
-  "scripts": {
-    "test": "jest --watch"
-  },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.1.1",
     "@types/jest": "^27.4.0",

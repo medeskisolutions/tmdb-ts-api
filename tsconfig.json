@@ -7,7 +7,7 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true,
     "outDir": "./lib",
-
+    "declaration": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
