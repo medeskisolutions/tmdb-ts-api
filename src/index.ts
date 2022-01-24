@@ -30,6 +30,13 @@ import watchProviders from "./watchProviders"
 
 dotenv.config()
 
+export interface PaginatedResponse<T> {
+  page: number
+  results: T[]
+  total_pages: number
+  total_results: number
+}
+
 const createTmdbAxios = () => {
   invariant(process.env.TMDB_API_KEY, "process.env.TMDB_API_KEY not found")
 
