@@ -2,33 +2,60 @@ import { tmdbGet } from "."
 import { Country } from "./configuration/countries"
 import { Language } from "./configuration/languages"
 import {
+  CollectionSearchResult,
   CollectionsSearchResults,
   mockCollectionsSearchResults,
 } from "./search/collections"
 import {
   CompaniesSearchResults,
+  CompanySearchResult,
   mockCompaniesSearchResults,
 } from "./search/companies"
 import {
+  KeywordSearchResult,
   KeywordsSearchResults,
   mockKeywordsSearchResults,
 } from "./search/keywords"
-import { MoviesSearchResults, mockMoviesSearchResults } from "./search/movies"
-import { MultiSearchResults, mockMultiSearchResults } from "./search/multi"
-import { PeopleSearchResults, mockPeopleSearchResults } from "./search/people"
 import {
+  MovieSearchResult,
+  MoviesSearchResults,
+  mockMoviesSearchResults,
+} from "./search/movies"
+import {
+  MultiMovieSearchResult,
+  MultiPersonSearchResult,
+  MultiSearchResults,
+  MultiTvShowSearchResult,
+  mockMultiSearchResults,
+} from "./search/multi"
+import {
+  PeopleSearchResults,
+  PersonSearchResult,
+  mockPeopleSearchResults,
+} from "./search/people"
+import {
+  TvShowSearchResult,
   TvShowsSearchResults,
   mockTvShowsSearchResults,
 } from "./search/tv-shows"
 
 export {
   CollectionsSearchResults,
+  CollectionSearchResult,
   CompaniesSearchResults,
+  CompanySearchResult,
   KeywordsSearchResults,
+  KeywordSearchResult,
   MoviesSearchResults,
+  MovieSearchResult,
   MultiSearchResults,
+  MultiMovieSearchResult,
+  MultiPersonSearchResult,
+  MultiTvShowSearchResult,
   PeopleSearchResults,
+  PersonSearchResult,
   TvShowsSearchResults,
+  TvShowSearchResult,
 }
 
 export default {

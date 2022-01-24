@@ -1,6 +1,6 @@
 import { PaginatedResponse } from ".."
 
-export interface CollectionsSearchResult {
+export interface CollectionSearchResult {
   adult: boolean
   backdrop_path: string
   id: number
@@ -11,8 +11,7 @@ export interface CollectionsSearchResult {
   poster_path: string
 }
 
-export type CollectionsSearchResults =
-  PaginatedResponse<CollectionsSearchResult>
+export type CollectionsSearchResults = PaginatedResponse<CollectionSearchResult>
 
 export const mockCollectionsSearchResults: CollectionsSearchResults = {
   page: 1,
