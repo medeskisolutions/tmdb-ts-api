@@ -4,7 +4,8 @@
   "author": "Josh Medeski<josh@medeskisolutions.com>",
   "license": "MIT",
   "description": "A TypeScript API for working with The Movie Database API (tmdb)",
-  "main": "./lib/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --watch"
