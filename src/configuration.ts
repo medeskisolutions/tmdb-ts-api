@@ -14,6 +14,13 @@ import {
   mockPrimaryTranslations,
 } from "./configuration/primary_translations"
 
+export {
+  ApiConfiguration,
+  CountriesConfiguration,
+  LanguagesConfiguration,
+  PrimaryTranslations,
+}
+
 export default {
   /**
    * Get the system wide configuration information.

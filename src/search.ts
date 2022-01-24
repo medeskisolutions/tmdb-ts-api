@@ -21,6 +21,16 @@ import {
   mockTvShowsSearchResults,
 } from "./search/tv-shows"
 
+export {
+  CollectionsSearchResults,
+  CompaniesSearchResults,
+  KeywordsSearchResults,
+  MoviesSearchResults,
+  MultiSearchResults,
+  PeopleSearchResults,
+  TvShowsSearchResults,
+}
+
 export default {
   /**
    * Search for collections.

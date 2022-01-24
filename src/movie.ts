@@ -1,7 +1,7 @@
 import { tmdbGet } from "."
 import { Language } from "./configuration/languages"
-import { MovieDetails, mockMovieDetails } from "./movie/{movie_id}"
 import { MovieCredits, mockMovieCredits } from "./movie/{movie_id}/credits"
+import { MovieDetails, mockMovieDetails } from "./movie/{movie_id}/details"
 import { MovieImages, mockMovieImages } from "./movie/{movie_id}/images"
 import { MovieKeywords, mockMovieKeywords } from "./movie/{movie_id}/keywords"
 import { MovieLists, mockMovieLists } from "./movie/{movie_id}/lists"
@@ -9,6 +9,15 @@ import {
   MovieRecommendations,
   mockMovieRecommendations,
 } from "./movie/{movie_id}/recommendations"
+
+export {
+  MovieCredits,
+  MovieDetails,
+  MovieImages,
+  MovieKeywords,
+  MovieLists,
+  MovieRecommendations,
+}
 
 export default {
   /**
