@@ -6,9 +6,13 @@
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true,
+    "outDir": "./lib",
+
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "coverage", "src/__snapshots__"]
 }
