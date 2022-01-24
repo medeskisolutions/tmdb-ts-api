@@ -1,6 +1,5 @@
 import { tmdbGet } from "."
 import { Language } from "./configuration/languages"
-import { TvShowDetails, mockTvShowDetails } from "./tv/{tv_id}"
 import {
   TvShowAggregateCredits,
   mockTvShowAggregateCredits,
@@ -14,6 +13,7 @@ import {
   mockTvShowContentRatings,
 } from "./tv/{tv_id}/content_ratings"
 import { TvShowCredits, mockTvShowCredits } from "./tv/{tv_id}/credits"
+import { TvShowDetails, mockTvShowDetails } from "./tv/{tv_id}/details"
 import {
   TvShowEpisodeGroups,
   mockTvShowEpisodeGroups,
@@ -39,6 +39,21 @@ import {
   mockTvShowTranslations,
 } from "./tv/{tv_id}/translations"
 import { TvShowVideos, mockTvShowVideos } from "./tv/{tv_id}/videos"
+
+export {
+  TvShowAggregateCredits,
+  TvShowAlternativeTitles,
+  TvShowContentRatings,
+  TvShowDetails,
+  TvShowEpisodeGroups,
+  TvShowExternalIds,
+  TvShowImages,
+  TvShowKeywords,
+  TvShowRecommendations,
+  TvShowScreenedTheatrically,
+  TvShowTranslations,
+  TvShowVideos,
+}
 
 export default {
   /**
