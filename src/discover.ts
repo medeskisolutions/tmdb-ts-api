@@ -1,4 +1,6 @@
-export default {
-  discoverMovies: async () => {},
-  discoverTvShows: async () => {},
+import { Api } from "./api"
+
+export default class Discover extends Api {
+  async discoverMovies() {}
+  async fdiscoverTvShows() {}
 }

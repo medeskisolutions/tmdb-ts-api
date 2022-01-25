@@ -1,4 +1,6 @@
-export default {
-  getDetails: async () => {},
-  getMovies: async () => {},
+import { Api } from "./api"
+
+export default class Keyword extends Api {
+  async getDetails() {}
+  async getMovies() {}
 }

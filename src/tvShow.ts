@@ -1,4 +1,4 @@
-import { tmdbGet } from "."
+import { Api, TmdbApiOptions } from "./api"
 import { Language } from "./configuration/languages"
 import {
   TvShowAggregateCredits,
@@ -39,6 +39,7 @@ import {
   mockTvShowTranslations,
 } from "./tv/{tv_id}/translations"
 import { TvShowVideos, mockTvShowVideos } from "./tv/{tv_id}/videos"
+import TvShowSeason from "./tvShowSeason"
 
 export {
   TvShowAggregateCredits,
@@ -55,25 +56,29 @@ export {
   TvShowVideos,
 }
 
-export default {
+export default class TvShow extends Api {
+  season: TvShowSeason
+
+  constructor(options: TmdbApiOptions) {
+    super(options)
+    this.season = new TvShowSeason(options)
+  }
+
   /**
    * Get the primary TV show details by id.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-details
    */
-  getDetails: async (
-    tvShowId: string,
-    params: { language?: Language } = {},
-  ) => {
+  async getDetails(tvShowId: string, params: { language?: Language } = {}) {
     // TODO add append to response values
-    return await tmdbGet<TvShowDetails>(
+    return await this.get<TvShowDetails>(
       `/tv/${tvShowId}`,
       { params },
       mockTvShowDetails,
     )
-  },
+  }
 
-  getAccountStates: async () => {},
+  async getAccountStates() {}
 
   /**
    * Get the aggregate credits (cast and crew) that have been added to
@@ -85,66 +90,63 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-aggregate-credits
    */
-  getAggregateCredits: async (
+  async getAggregateCredits(
     tvShowId: string,
     params: { language?: Language } = {},
-  ) => {
-    return await tmdbGet<TvShowAggregateCredits>(
+  ) {
+    return await this.get<TvShowAggregateCredits>(
       `/tv/${tvShowId}/aggregate_credits`,
       { params },
       mockTvShowAggregateCredits,
     )
-  },
+  }
 
   /**
    * Returns all of the alternative titles for a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-alternative-titles
    */
-  getAlternativeTitles: async (
+  async getAlternativeTitles(
     tvShowId: string,
     params: { language?: Language } = {},
-  ) => {
-    return await tmdbGet<TvShowAlternativeTitles>(
+  ) {
+    return await this.get<TvShowAlternativeTitles>(
       `/tv/${tvShowId}/alternative_titles`,
       { params },
       mockTvShowAlternativeTitles,
     )
-  },
+  }
 
-  getChanges: async () => {},
+  async getChanges() {}
 
   /**
    * Get the list of content ratings (certifications) that have been added to a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-content-ratings
    */
-  getContentRatings: async (
+  async getContentRatings(
     tvShowId: string,
     params: { language?: Language } = {},
-  ) => {
-    return await tmdbGet<TvShowCredits>(
+  ) {
+    return await this.get<TvShowCredits>(
       `/tv/${tvShowId}/content_ratings`,
       { params },
       mockTvShowCredits,
     )
-  },
+  }
 
   /**
    * Get the credits (cast and crew) that have been added to a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-credits
    */
-  getCredits: async (
-    tvShowId: string,
-    params: { language?: Language } = {},
-  ) => {
-    return await tmdbGet<TvShowContentRatings>(
+  async getCredits(tvShowId: string, params: { language?: Language } = {}) {
+    return await this.get<TvShowContentRatings>(
       `/tv/${tvShowId}/credits`,
       { params },
       mockTvShowContentRatings,
     )
-  },
+  }
 
   /**
    * Get all of the episode groups that have been created for a TV show.
@@ -153,103 +155,100 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-episode-groups
    */
-  getEpisodeGroups: async (
+  async getEpisodeGroups(
     tvShowId: string,
     params: { language?: Language } = {},
-  ) => {
-    return await tmdbGet<TvShowEpisodeGroups>(
+  ) {
+    return await this.get<TvShowEpisodeGroups>(
       `/tv/${tvShowId}/episode_groups`,
       { params },
       mockTvShowEpisodeGroups,
     )
-  },
+  }
 
   /**
    * Get the external ids for a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-external-ids
    */
-  getExternalIds: async (
-    tvShowId: string,
-    params: { language?: Language } = {},
-  ) => {
-    return await tmdbGet<TvShowExternalIds>(
+  async getExternalIds(tvShowId: string, params: { language?: Language } = {}) {
+    return await this.get<TvShowExternalIds>(
       `/tv/${tvShowId}/external_ids`,
       { params },
       mockTvShowExternalIds,
     )
-  },
+  }
 
   /**
    * Get the images that belong to a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-images
    */
-  getImages: async (tvShowId: string, params: { language?: Language } = {}) => {
-    return await tmdbGet<TvShowImages>(
+  async getImages(tvShowId: string, params: { language?: Language } = {}) {
+    return await this.get<TvShowImages>(
       `/tv/${tvShowId}/images`,
       { params },
       mockTvShowImages,
     )
-  },
+  }
 
   /**
    * Get the keywords that have been added to a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-keywords
    */
-  getKeywords: async (tvShowId: string) => {
-    return await tmdbGet<TvShowKeywords>(
+  async getKeywords(tvShowId: string) {
+    return await this.get<TvShowKeywords>(
       `/tv/${tvShowId}/images`,
       {},
       mockTvShowKeywords,
     )
-  },
+  }
 
   /**
    * Get the list of TV show recommendations for this item.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-recommendations
    */
-  getRecommendations: async (
+  async getRecommendations(
     tvShowId: string,
     params: { language?: Language; page?: number } = {},
-  ) => {
-    return await tmdbGet<TvShowRecommendations>(
+  ) {
+    return await this.get<TvShowRecommendations>(
       `/tv/${tvShowId}/recommendations`,
       { params },
       mockTvShowRecommendations,
     )
-  },
+  }
 
   /**
    * Get the reviews for a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-reviews
    */
-  getReviews: async (
+  async getReviews(
     tvShowId: string,
     params: { language?: Language; page?: number } = {},
-  ) => {
-    return await tmdbGet<TvShowReviews>(
+  ) {
+    return await this.get<TvShowReviews>(
       `/tv/${tvShowId}/reviews`,
       { params },
       mockTvShowReviews,
     )
-  },
+  }
 
   /**
    * Get a list of seasons or episodes that have been screened in a film festival or theatre.
    *
    * @link https://developers.themoviedb.org/3/tv/get-screened-theatrically
    */
-  getScreenedTheatrically: async (tvShowId: string) => {
-    return await tmdbGet<TvShowScreenedTheatrically>(
+  async getScreenedTheatrically(tvShowId: string) {
+    return await this.get<TvShowScreenedTheatrically>(
       `/tv/${tvShowId}/screened_theatrically`,
       {},
       mockTvShowScreenedTheatrically,
     )
-  },
+  }
 
   /**
    * Get a list of similar TV shows. These items are assembled
@@ -257,42 +256,42 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/tv/get-similar-tv-shows
    */
-  getSimilar: async (
+  async getSimilar(
     tvShowId: string,
     params: { language?: Language; page?: number } = {},
-  ) => {
-    return await tmdbGet<SimilarTvShows>(
+  ) {
+    return await this.get<SimilarTvShows>(
       `/tv/${tvShowId}/similar`,
       { params },
       mockSimilarTvShows,
     )
-  },
+  }
 
   /**
    * Get a list of the translations that exist for a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-translations
    */
-  getTranslations: async (tvShowId: string) => {
-    return await tmdbGet<TvShowTranslations>(
+  async getTranslations(tvShowId: string) {
+    return await this.get<TvShowTranslations>(
       `/tv/${tvShowId}/translations`,
       {},
       mockTvShowTranslations,
     )
-  },
+  }
 
   /**
    * Get the videos that have been added to a TV show.
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-videos
    */
-  getVideos: async (tvShowId: string, params: { language?: Language } = {}) => {
-    return await tmdbGet<TvShowVideos>(
+  async getVideos(tvShowId: string, params: { language?: Language } = {}) {
+    return await this.get<TvShowVideos>(
       `/tv/${tvShowId}/watch/providers`,
       { params },
       mockTvShowVideos,
     )
-  },
+  }
 
   /**
    * Powered by our partnership with JustWatch, you can query this method to get a list of the availabilities per country by provider.
@@ -305,14 +304,14 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-watch-providers
    */
-  getWatchProviders: async (tvShowId: string) => {
-    return await tmdbGet<TvShowVideos>(
+  async getWatchProviders(tvShowId: string) {
+    return await this.get<TvShowVideos>(
       `/tv/${tvShowId}/watch/providers`,
       {},
       mockTvShowVideos,
     )
-  },
+  }
 
-  rateTvShow: async (tvShowId: string) => {},
-  deleteRating: async (tvShowId: string) => {},
+  async rateTvShow(tvShowId: string) {}
+  async deleteRating(tvShowId: string) {}
 }

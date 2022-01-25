@@ -1,4 +1,4 @@
-import { tmdbGet } from "."
+import { Api, TmdbApiOptions } from "./api"
 import { Country } from "./configuration/countries"
 import { Language } from "./configuration/languages"
 import { LatestMovie, mockLatestMovie } from "./movie/latest"
@@ -7,20 +7,20 @@ import { PopularMovies, mockPopularMovies } from "./movie/popular"
 import { TopRatedMovies, mockTopRatedMovies } from "./movie/top_rated"
 import { UpcomingMovies, mockUpcomingMovies } from "./movie/upcoming"
 
-export default {
+export default class Movies extends Api {
   /**
    * Get the most newly created movie. This is a live response and will
    * continuously change.
    *
    * @link https://developers.themoviedb.org/3/movies/get-latest-movie
    */
-  getLatest: async (params: { language?: Language } = {}) => {
-    return await tmdbGet<LatestMovie>(
+  async getLatest(params: { language?: Language } = {}) {
+    return await this.get<LatestMovie>(
       `/movie/latest`,
       { params },
       mockLatestMovie,
     )
-  },
+  }
 
   /**
    * Get a list of movies in theatres. This is a release type query that
@@ -29,45 +29,45 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/movies/get-now-playing
    */
-  getNowPlaying: async (
+  async getNowPlaying(
     params: { language?: Language; page?: number; region?: Country } = {},
-  ) => {
-    return await tmdbGet<MoviesNowPlaying>(
+  ) {
+    return await this.get<MoviesNowPlaying>(
       `/movie/now_playing`,
       { params },
       mockMoviesNowPlaying,
     )
-  },
+  }
 
   /**
    * Get a list of the current popular movies on TMDB.
    *
    * @link https://developers.themoviedb.org/3/movies/get-popular-movies
    */
-  getPopular: async (
+  async getPopular(
     params: { language?: Language; page?: number; region?: Country } = {},
-  ) => {
-    return await tmdbGet<PopularMovies>(
+  ) {
+    return await this.get<PopularMovies>(
       `/movie/popular`,
       { params },
       mockPopularMovies,
     )
-  },
+  }
 
   /**
    * Get the top rated movies on TMDB.
    *
    * @link https://developers.themoviedb.org/3/movies/get-top-rated-movies
    */
-  getTopRated: async (
+  async getTopRated(
     params: { language?: Language; page?: number; region?: Country } = {},
-  ) => {
-    return await tmdbGet<TopRatedMovies>(
+  ) {
+    return await this.get<TopRatedMovies>(
       `/movie/top_rated`,
       { params },
       mockTopRatedMovies,
     )
-  },
+  }
 
   /**
    * Get a list of upcoming movies in theatres. This is a release type query
@@ -76,13 +76,13 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/movies/get-upcoming
    */
-  getUpcoming: async (
+  async getUpcoming(
     params: { language?: Language; page?: number; region?: Country } = {},
-  ) => {
-    return await tmdbGet<UpcomingMovies>(
+  ) {
+    return await this.get<UpcomingMovies>(
       `/movie/upcoming`,
       { params },
       mockUpcomingMovies,
     )
-  },
+  }
 }

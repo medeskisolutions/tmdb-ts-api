@@ -1,4 +1,4 @@
-import { tmdbGet } from "."
+import { Api } from "./api"
 import { Language } from "./configuration/languages"
 import { TvShowsAiringToday, mockTvShowsAiringToday } from "./tv/airing_today"
 import { LatestTvShow, mockLatestTvShow } from "./tv/latest"
@@ -6,20 +6,20 @@ import { TvShowsOnTheAir, mockTvShowsOnTheAir } from "./tv/on_the_air"
 import { PopularTvShows, mockPopularTvShows } from "./tv/popular"
 import { TopRatedTvShows, mockTopRatedTvShows } from "./tv/top_rated"
 
-export default {
+export default class TvShows extends Api {
   /**
    * Get the most newly created TV show. This is a live response and will
    * continuously change.
    *
    * @link https://developers.themoviedb.org/3/tv/get-latest-tv
    */
-  getLatest: async (params: { language?: Language } = {}) => {
-    return await tmdbGet<LatestTvShow>(
+  async getLatest(params: { language?: Language } = {}) {
+    return await this.get<LatestTvShow>(
       `/tv/latest`,
       { params },
       mockLatestTvShow,
     )
-  },
+  }
 
   /**
    * Get a list of TV shows that are airing today. This query is purely day based as we do not currently support airing times.
@@ -28,16 +28,16 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-airing-today
    */
-  getTvShowsAiringToday: async (
+  async getTvShowsAiringToday(
     params: { language?: Language; page?: number } = {},
-  ) => {
+  ) {
     // TODO add timezone param
-    return await tmdbGet<TvShowsAiringToday>(
+    return await this.get<TvShowsAiringToday>(
       `/tv/airing_today`,
       { params },
       mockTvShowsAiringToday,
     )
-  },
+  }
 
   /**
    * Get a list of shows that are currently on the air.
@@ -47,39 +47,39 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/tv/get-tv-airing-today
    */
-  getTvShowsOnTheAir: async (
+  async getTvShowsOnTheAir(
     params: { language?: Language; page?: number } = {},
-  ) => {
-    return await tmdbGet<TvShowsOnTheAir>(
+  ) {
+    return await this.get<TvShowsOnTheAir>(
       `/tv/on_the_air`,
       { params },
       mockTvShowsOnTheAir,
     )
-  },
+  }
 
   /**
    * Get a list of the current popular TV shows on TMDB. This list updates daily.
    *
    * @link https://developers.themoviedb.org/3/tv/get-popular-tv-shows
    */
-  getPopular: async (params: { language?: Language; page?: number } = {}) => {
-    return await tmdbGet<PopularTvShows>(
+  async getPopular(params: { language?: Language; page?: number } = {}) {
+    return await this.get<PopularTvShows>(
       `/tv/popular`,
       { params },
       mockPopularTvShows,
     )
-  },
+  }
 
   /**
    * Get a list of the top rated TV shows on TMDB.
    *
    * @link https://developers.themoviedb.org/3/tv/get-top-rated-tv
    */
-  getTopRated: async (params: { language?: Language } = {}) => {
-    return await tmdbGet<TopRatedTvShows>(
+  async getTopRated(params: { language?: Language } = {}) {
+    return await this.get<TopRatedTvShows>(
       `/tv/top_rated`,
       { params },
       mockTopRatedTvShows,
     )
-  },
+  }
 }

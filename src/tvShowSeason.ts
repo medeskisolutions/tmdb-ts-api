@@ -1,15 +1,21 @@
-import tvShowEpisode from "./tvShowEpisode"
+import { Api, TmdbApiOptions } from "./api"
+import TvShowEpisode from "./tvShowEpisode"
 
-export default {
-  getDetails: async (tvShowId: string, seasonNumber: number) => {},
-  getAccountStates: async (tvShowId: string, seasonNumber: number) => {},
-  getAggregateCredits: async (tvShowId: string, seasonNumber: number) => {},
-  getChanges: async (seasonId: string) => {},
-  getCredits: async (tvShowId: string, seasonNumber: number) => {},
-  getExternalIds: async (tvShowId: string, seasonNumber: number) => {},
-  getImages: async (tvShowId: string, seasonNumber: number) => {},
-  getTranslations: async (tvShowId: string, seasonNumber: number) => {},
-  getVideos: async (tvShowId: string, seasonNumber: number) => {},
+export default class TvShowSeason extends Api {
+  episode: TvShowEpisode
 
-  episode: tvShowEpisode,
+  constructor(options: TmdbApiOptions) {
+    super(options)
+    this.episode = new TvShowEpisode(options)
+  }
+
+  async getDetails(tvShowId: string, seasonNumber: number) {}
+  async getAccountStates(tvShowId: string, seasonNumber: number) {}
+  async getAggregateCredits(tvShowId: string, seasonNumber: number) {}
+  async getChanges(seasonId: string) {}
+  async getCredits(tvShowId: string, seasonNumber: number) {}
+  async getExternalIds(tvShowId: string, seasonNumber: number) {}
+  async getImages(tvShowId: string, seasonNumber: number) {}
+  async getTranslations(tvShowId: string, seasonNumber: number) {}
+  async getVideos(tvShowId: string, seasonNumber: number) {}
 }

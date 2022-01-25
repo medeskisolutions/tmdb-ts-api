@@ -1,72 +1,34 @@
-import axios, { AxiosInstance } from "axios"
-import * as dotenv from "dotenv"
-import invariant from "tiny-invariant"
-
-import account from "./account"
-import authentication from "./authentication"
-import certifications from "./certifications"
-import changes from "./changes"
-import collection from "./collection"
-import company from "./company"
-import configuration from "./configuration"
-import credit from "./credit"
-import discover from "./discover"
-import find from "./find"
-import genres from "./genres"
-import guestSession from "./guestSession"
-import keyword from "./keyword"
-import movie from "./movie"
-import movies from "./movies"
-import network from "./network"
-import people from "./people"
-import person from "./person"
-import review from "./review"
-import search from "./search"
-import trending from "./trending"
-import tvShow from "./tvShow"
-import tvShowSeason from "./tvShowSeason"
-import tvShows from "./tvShows"
-import watchProviders from "./watchProviders"
-
-dotenv.config()
+import { TmdbApiOptions } from "./api"
+import Authentication from "./authentication"
+import Certifications from "./certifications"
+import Changes from "./changes"
+import Collection from "./collection"
+import Company from "./company"
+import Configuration from "./configuration"
+import Credit from "./credit"
+import Discover from "./discover"
+import Find from "./find"
+import Genres from "./genres"
+import GuestSession from "./guestSession"
+import Keyword from "./keyword"
+import List from "./lists"
+import Movie from "./movie"
+import Movies from "./movies"
+import Network from "./network"
+import People from "./people"
+import Person from "./person"
+import Review from "./review"
+import Search from "./search"
+import Trending from "./trending"
+import TvShow from "./tvShow"
+import TvShows from "./tvShows"
+import WatchProviders from "./watchProviders"
 
 export interface PaginatedResponse<T> {
   page: number
   results: T[]
   total_pages: number
   total_results: number
-}
-
-const createTmdbAxios = () => {
-  invariant(process.env.TMDB_API_KEY, "process.env.TMDB_API_KEY not found")
-
-  invariant(
-    process.env.TMDB_API_PROXY_URL,
-    "process.env.TMDB_API_PROXY_URL not found",
-  )
-
-  const baseURL =
-    typeof window === "undefined"
-      ? "https://api.themoviedb.org/3"
-      : process.env.TMDB_API_PROXY_URL
-
-  const api_key: string = process.env.TMDB_API_KEY
-
-  return axios.create({ baseURL, params: { api_key } })
-}
-
-const tmdbAxios = createTmdbAxios()
-
-export async function tmdbGet<T>(
-  uri: string,
-  params: Object,
-  mock: T,
-): Promise<T> {
-  const { data } =
-    process.env.NODE_ENV === "test"
-      ? { data: mock }
-      : await tmdbAxios.get<T>(uri, { params })
-  return data
 }
 
 /**
@@ -77,32 +39,55 @@ export async function tmdbGet<T>(
  * @link http://json2ts.com
  */
 export class Tmdb {
-  account = account
-  authentication = authentication
-  certifications = certifications
-  changes = changes
-  collection = collection
-  company = company
-  configuration = configuration
-  credit = credit
-  discover = discover
-  find = find
-  genres = genres
-  guestSession = guestSession
-  keyword = keyword
-  lists = {}
-  movie = movie
-  movies = movies
-  network = network
-  trending = trending
-  person = person
-  people = people
-  review = review
-  search = search
-  tvShow = {
-    ...tvShow,
-    season: tvShowSeason,
+  authentication: Authentication
+  certifications: Certifications
+  changes: Changes
+  collection: Collection
+  company: Company
+  configuration: Configuration
+  credit: Credit
+  discover: Discover
+  find: Find
+  genres: Genres
+  guestSession: GuestSession
+  keyword: Keyword
+  list: List
+  movie: Movie
+  movies: Movies
+  network: Network
+  trending: Trending
+  person: Person
+  people: People
+  review: Review
+  search: Search
+  tvShow: TvShow
+  tvShows: TvShows
+  watchProviders: WatchProviders
+
+  constructor(options: TmdbApiOptions) {
+    this.authentication = new Authentication(options)
+    this.certifications = new Certifications(options)
+    this.changes = new Changes(options)
+    this.collection = new Collection(options)
+    this.company = new Company(options)
+    this.configuration = new Configuration(options)
+    this.credit = new Credit(options)
+    this.discover = new Discover(options)
+    this.find = new Find(options)
+    this.genres = new Genres(options)
+    this.guestSession = new GuestSession(options)
+    this.keyword = new Keyword(options)
+    this.list = new List(options)
+    this.movie = new Movie(options)
+    this.movies = new Movies(options)
+    this.network = new Network(options)
+    this.trending = new Trending(options)
+    this.person = new Person(options)
+    this.people = new People(options)
+    this.review = new Review(options)
+    this.search = new Search(options)
+    this.tvShow = new TvShow(options)
+    this.tvShows = new TvShows(options)
+    this.watchProviders = new WatchProviders(options)
   }
-  tvShows = tvShows
-  watchProviders = watchProviders
 }

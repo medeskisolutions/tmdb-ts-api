@@ -1,10 +1,14 @@
 import { Tmdb } from "."
 
 describe("movie", () => {
-  const tmdb = new Tmdb()
+  const tmdb = new Tmdb({
+    api_key: "your-api-key",
+    proxyURL: "http://localhost:3000/api/tmdb",
+    mock: true,
+  })
 
   it("getDetails", async () => {
-    const result = await tmdb.movie.getDetails("603")
+    const result = await tmdb.movie.getDetails(603)
     expect(result).toMatchSnapshot()
   })
 
@@ -13,26 +17,26 @@ describe("movie", () => {
   it.skip("getChanges", async () => {})
 
   it("getCredits", async () => {
-    const result = await tmdb.movie.getCredits("603")
+    const result = await tmdb.movie.getCredits(603)
     expect(result).toMatchSnapshot()
   })
 
   it.skip("getExternalIds", async () => {})
 
   it("getImages", async () => {
-    const result = await tmdb.movie.getImages("603")
+    const result = await tmdb.movie.getImages(603)
     expect(result).toMatchSnapshot()
   })
 
   it("getKeywords", async () => {
-    const result = await tmdb.movie.getKeywords("603")
+    const result = await tmdb.movie.getKeywords(603)
     expect(result).toMatchSnapshot()
   })
 
   it.skip("getLists", async () => {})
 
   it("getRecommendations", async () => {
-    const recommendations = await tmdb.movie.getRecommendations("603")
+    const recommendations = await tmdb.movie.getRecommendations(603)
     expect(recommendations).toMatchSnapshot()
   })
 

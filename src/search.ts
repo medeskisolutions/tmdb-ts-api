@@ -1,4 +1,4 @@
-import { tmdbGet } from "."
+import { Api } from "./api"
 import { Country } from "./configuration/countries"
 import { Language } from "./configuration/languages"
 import {
@@ -58,68 +58,68 @@ export {
   TvShowSearchResult,
 }
 
-export default {
+export default class Search extends Api {
   /**
    * Search for collections.
    *
    * @link https://developers.themoviedb.org/3/search/search-collections
    */
-  searchCollections: async (
+  async searchCollections(
     query: string,
     params?: {
       language?: Language
       page?: number
     },
-  ) => {
-    return await tmdbGet<CollectionsSearchResults>(
+  ) {
+    return await this.get<CollectionsSearchResults>(
       `/search/collections`,
       { query, params },
       mockCollectionsSearchResults,
     )
-  },
+  }
 
   /**
    * Search for companies.
    *
    * @link https://developers.themoviedb.org/3/search/search-companies
    */
-  searchCompanies: async (
+  async searchCompanies(
     query: string,
     params?: {
       page?: number
     },
-  ) => {
-    return await tmdbGet<CompaniesSearchResults>(
+  ) {
+    return await this.get<CompaniesSearchResults>(
       `/search/company`,
       { query, params },
       mockCompaniesSearchResults,
     )
-  },
+  }
 
   /**
    * Search for keywords.
    *
    * @link https://developers.themoviedb.org/3/search/search-keywords
    */
-  searchKeywords: async (
+  async searchKeywords(
     query: string,
     params?: {
       page?: number
     },
-  ) => {
-    return await tmdbGet<KeywordsSearchResults>(
+  ) {
+    return await this.get<KeywordsSearchResults>(
       `/search/keywords`,
       { query, params },
       mockKeywordsSearchResults,
     )
-  },
+  }
 
   /**
    * Search for movies.
    *
    * @link https://developers.themoviedb.org/3/search/search-movies
    */
-  searchMovies: async (
+  async searchMovies(
     query: string,
     params?: {
       include_adult?: boolean
@@ -129,13 +129,13 @@ export default {
       year?: number
       primary_release_year?: number
     },
-  ) => {
-    return await tmdbGet<MoviesSearchResults>(
+  ) {
+    return await this.get<MoviesSearchResults>(
       `/search/movie`,
       { query, params },
       mockMoviesSearchResults,
     )
-  },
+  }
 
   /**
    * Search multiple models in a single request. Multi search currently
@@ -143,7 +143,7 @@ export default {
    *
    * @link https://developers.themoviedb.org/3/search/multi-search
    */
-  searchMulti: async (
+  async searchMulti(
     query: string,
     params?: {
       include_adult?: boolean
@@ -151,20 +151,20 @@ export default {
       page?: number
       region?: Country
     },
-  ) => {
-    return await tmdbGet<MultiSearchResults>(
+  ) {
+    return await this.get<MultiSearchResults>(
       `/search/multi`,
       { query, params },
       mockMultiSearchResults,
     )
-  },
+  }
 
   /**
    * Search for people.
    *
    * @link https://developers.themoviedb.org/3/search/search-people
    */
-  searchPeople: async (
+  async searchPeople(
     query: string,
     params?: {
       include_adult?: boolean
@@ -172,20 +172,20 @@ export default {
       page?: number
       region?: Country
     },
-  ) => {
-    return await tmdbGet<PeopleSearchResults>(
+  ) {
+    return await this.get<PeopleSearchResults>(
       `/search/person`,
       { query, params },
       mockPeopleSearchResults,
     )
-  },
+  }
 
   /**
    * Search for a TV show.
    *
    * @link https://developers.themoviedb.org/3/search/search-tv-shows
    */
-  searchTvShows: async (
+  async searchTvShows(
     query: string,
     params?: {
       include_adult?: boolean
@@ -193,11 +193,11 @@ export default {
       page?: number
       first_air_date_year?: number
     },
-  ) => {
-    return await tmdbGet<TvShowsSearchResults>(
+  ) {
+    return await this.get<TvShowsSearchResults>(
       `/search/tv`,
       { query, params },
       mockTvShowsSearchResults,
     )
-  },
+  }
 }

@@ -1,11 +1,13 @@
-export default {
-  getDetails: async (personId: string) => {},
-  getChanges: async (personId: string) => {},
-  getMovieCredits: async (personId: string) => {},
-  getTvShowCredits: async (personId: string) => {},
-  getCombinedCredits: async (personId: string) => {},
-  getExternalIds: async (personId: string) => {},
-  getImages: async (personId: string) => {},
-  getTaggedImages: async (personId: string) => {},
-  getTranslations: async (personId: string) => {},
+import { Api } from "./api"
+
+export default class Person extends Api {
+  async getDetails(personId: string) {}
+  async getChanges(personId: string) {}
+  async getMovieCredits(personId: string) {}
+  async getTvShowCredits(personId: string) {}
+  async getCombinedCredits(personId: string) {}
+  async getExternalIds(personId: string) {}
+  async getImages(personId: string) {}
+  async getTaggedImages(personId: string) {}
+  async getTranslations(personId: string) {}
 }

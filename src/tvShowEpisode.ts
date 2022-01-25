@@ -1,48 +1,26 @@
-export default {
-  getDetails: async (
+import { Api } from "./api"
+
+export default class TvShowEpisode extends Api {
+  getDetails(tvShowId: string, seasonNumber: number, episodeNumber: number) {}
+  getAccountStates(
     tvShowId: string,
     seasonNumber: number,
     episodeNumber: number,
-  ) => {},
-  getAccountStates: async (
+  ) {}
+  async getChanges(episodeNumber: number) {}
+  getCredits(tvShowId: string, seasonNumber: number, episodeNumber: number) {}
+  getExternalIds(
     tvShowId: string,
     seasonNumber: number,
     episodeNumber: number,
-  ) => {},
-  getChanges: async (episodeNumber: number) => {},
-  getCredits: async (
+  ) {}
+  getImages(tvShowId: string, seasonNumber: number, episodeNumber: number) {}
+  getTranslations(
     tvShowId: string,
     seasonNumber: number,
     episodeNumber: number,
-  ) => {},
-  getExternalIds: async (
-    tvShowId: string,
-    seasonNumber: number,
-    episodeNumber: number,
-  ) => {},
-  getImages: async (
-    tvShowId: string,
-    seasonNumber: number,
-    episodeNumber: number,
-  ) => {},
-  getTranslations: async (
-    tvShowId: string,
-    seasonNumber: number,
-    episodeNumber: number,
-  ) => {},
-  rate: async (
-    tvShowId: string,
-    seasonNumber: number,
-    episodeNumber: number,
-  ) => {},
-  deleteRating: async (
-    tvShowId: string,
-    seasonNumber: number,
-    episodeNumber: number,
-  ) => {},
-  getVideos: async (
-    tvShowId: string,
-    seasonNumber: number,
-    episodeNumber: number,
-  ) => {},
+  ) {}
+  rate(tvShowId: string, seasonNumber: number, episodeNumber: number) {}
+  deleteRating(tvShowId: string, seasonNumber: number, episodeNumber: number) {}
+  getVideos(tvShowId: string, seasonNumber: number, episodeNumber: number) {}
 }
