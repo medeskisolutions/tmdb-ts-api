@@ -1,11 +1,7 @@
 import { Tmdb } from "."
 
 describe("movie", () => {
-  const tmdb = new Tmdb({
-    api_key: "your-api-key",
-    proxyURL: "http://localhost:3000/api/tmdb",
-    mock: true,
-  })
+  const tmdb = new Tmdb({ mock: true })
 
   it("getDetails", async () => {
     const result = await tmdb.movie.getDetails(603)

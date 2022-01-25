@@ -8,11 +8,7 @@ import { mockPeopleSearchResults } from "./search/people"
 import { mockTvShowsSearchResults } from "./search/tv-shows"
 
 describe("search", () => {
-  const tmdb = new Tmdb({
-    api_key: "your-api-key",
-    proxyURL: "http://localhost:3000/api/tmdb",
-    mock: true,
-  })
+  const tmdb = new Tmdb({ mock: true })
 
   it("searchCollections", async () => {
     const result = await tmdb.search.searchCollections("matrix")

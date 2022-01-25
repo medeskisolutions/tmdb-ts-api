@@ -1,15 +1,20 @@
 import axios, { AxiosInstance } from "axios"
 
 export interface TmdbApiOptions {
-  api_key: string
-  proxyURL: string
+  apiKey?: string
+  proxyUrl?: string
   mock?: boolean
 }
 
-const createAxios = ({ api_key, proxyURL }: TmdbApiOptions) => {
-  const baseURL =
-    typeof window === "undefined" ? "https://api.themoviedb.org/3" : proxyURL
-  return axios.create({ baseURL, params: { api_key } })
+const createAxios = ({ apiKey, proxyUrl, mock }: TmdbApiOptions) => {
+  if (mock) return axios.create()
+  if (proxyUrl) return axios.create({ baseURL: proxyUrl })
+  if (!apiKey) throw "API key not provided"
+
+  return axios.create({
+    baseURL: "https://api.themoviedb.org/3",
+    params: { api_key: apiKey },
+  })
 }
 
 /**
