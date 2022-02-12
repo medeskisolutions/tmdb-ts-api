@@ -22,13 +22,15 @@ const createAxios = ({ apiKey, proxyUrl, mock }: TmdbApiOptions) => {
  */
 export class Api {
   axios: AxiosInstance
+  isMocked: boolean
 
   constructor(options: TmdbApiOptions) {
     this.axios = createAxios(options)
+    this.isMocked = !!options?.mock
   }
 
   async get<T>(uri: string, params: Object, mock: T): Promise<T> {
-    const { data } = mock
+    const { data } = this.isMocked
       ? { data: mock }
       : await this.axios.get<T>(uri, { params })
     return data
