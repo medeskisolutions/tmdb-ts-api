@@ -3,6 +3,9 @@
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
+**WARNING:** This is a work-in-progress (`v0.0.x`). Once `v1` is released I'll
+consider the API stable. For now, there may be lots of changes.
+
 ## How to install
 
 Install the `tmdb-ts-api` npm package.
