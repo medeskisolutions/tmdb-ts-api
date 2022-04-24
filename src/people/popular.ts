@@ -1,3 +1,4 @@
+import { JobDepartment } from "~/configuration/jobs"
 import { Language } from "~/configuration/languages"
 
 export interface PopularPeople {
@@ -12,8 +13,7 @@ export interface Result {
   gender: number
   id: number
   known_for: KnownFor[]
-  // TODO add department enum
-  known_for_department: string
+  known_for_department: JobDepartment
   name: string
   popularity: number
   profile_path: string

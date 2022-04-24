@@ -3,6 +3,21 @@ export interface JobsConfiguration {
   jobs: string[]
 }
 
+export enum JobDepartment {
+  Actors = "Actors",
+  Editing = "Editing",
+  Sound = "Sound",
+  Art = "Art",
+  VisualEffects = "Visual Effects",
+  Lighting = "Lighting",
+  Camera = "Camera",
+  Writing = "Writing",
+  Production = "Production",
+  CostumeAndMakeUp = "Costume & Make-Up",
+  Directing = "Directing",
+  Crew = "Crew",
+}
+
 export { mockJobsConfiguration as jobsByDepartment }
 
 export const mockJobsConfiguration: JobsConfiguration[] = [
