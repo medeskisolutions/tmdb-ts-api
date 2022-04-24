@@ -141,10 +141,10 @@ export default class TvShow extends Api {
    * @link https://developers.themoviedb.org/3/tv/get-tv-credits
    */
   async getCredits(tvShowId: string, params: { language?: Language } = {}) {
-    return await this.get<TvShowContentRatings>(
+    return await this.get<TvShowCredits>(
       `/tv/${tvShowId}/credits`,
       { params },
-      mockTvShowContentRatings,
+      mockTvShowCredits,
     )
   }
 
