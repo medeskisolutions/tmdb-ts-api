@@ -1,5 +1,8 @@
 import { Api } from "./api"
-import {mockMovieCertifications, MovieCertifications} from "./certifications/movie"
+import {
+  MovieCertifications,
+  mockMovieCertifications,
+} from "./certifications/movie"
 
 export default class Certifications extends Api {
   /**

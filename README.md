@@ -39,4 +39,3 @@ const tmdb = new Tmdb()
 const details = await tmdb.movie.getDetails('603')
 console.log(details)
 ```
-

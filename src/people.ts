@@ -1,6 +1,6 @@
 import { Api } from "./api"
-import {Language} from "./configuration/languages";
-import {mockPopularPeople, PopularPeople} from "./people/popular";
+import { Language } from "./configuration/languages"
+import { PopularPeople, mockPopularPeople } from "./people/popular"
 
 export default class People extends Api {
   /**
@@ -8,7 +8,7 @@ export default class People extends Api {
    *
    * @link https://developers.themoviedb.org/3/people/get-popular-people
    */
-  async getPopular( params?: { language?: Language; page?: number },) {
+  async getPopular(params?: { language?: Language; page?: number }) {
     return await this.get<PopularPeople>(
       `/person/popular`,
       { params },
