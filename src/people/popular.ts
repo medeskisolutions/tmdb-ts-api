@@ -13,7 +13,7 @@ export interface Result {
   gender: number
   id: number
   known_for: KnownFor[]
-  known_for_department: JobDepartment
+  known_for_department: JobDepartment | string
   name: string
   popularity: number
   profile_path: string
@@ -24,25 +24,20 @@ export interface KnownFor {
   backdrop_path: string
   genre_ids: number[]
   id: number
-  media_type: MediaType
-  original_language: Language
+  media_type: "movie" | "tv"
+  original_language: Language | string
   original_title?: string
   overview: string
   poster_path: string
-  release_date?: Date
+  release_date?: string
   title?: string
   video?: boolean
   vote_average: number
   vote_count: number
-  first_air_date?: Date
+  first_air_date?: string
   name?: string
   origin_country?: string[]
   original_name?: string
-}
-
-export enum MediaType {
-  Movie = "movie",
-  Tv = "tv",
 }
 
 export const mockPopularPeople: PopularPeople = {

@@ -15,7 +15,7 @@ export interface PersonMovieCredit {
   vote_count: number
   genre_ids: number[]
   id: number
-  original_language: Language
+  original_language: Language | string
   original_title: string
   poster_path: null | string
   title: string
@@ -25,10 +25,11 @@ export interface PersonMovieCredit {
   character?: string
   credit_id: string
   order?: number
-  department?: JobDepartment
+  department?: JobDepartment | string
   job?: string
 }
 
+// cSpell:disable
 export const mockPersonMovieCredits: PersonMovieCredits = {
   cast: [
     {

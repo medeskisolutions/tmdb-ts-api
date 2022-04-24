@@ -1,6 +1,7 @@
 import { Api } from "./api"
 import { Language } from "./configuration/languages"
 import { PersonDetails, mockPersonDetails } from "./person/details"
+import { PersonExternalIds, mockPersonExternalIds } from "./person/external_ids"
 import {
   PersonMovieCredits,
   mockPersonMovieCredits,
@@ -61,7 +62,10 @@ export default class Person extends Api {
    *
    * @link https://developers.themoviedb.org/3/people/get-person-external-ids
    */
-  async getExternalIds(personId: string | number) {
+  async getExternalIds(
+    personId: string | number,
+    params?: { language: Language },
+  ) {
     return await this.get<PersonExternalIds>(
       `/person/${personId}/movie_credits`,
       { params },

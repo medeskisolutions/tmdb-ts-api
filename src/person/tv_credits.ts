@@ -16,7 +16,7 @@ export interface PersonTvCredit {
   first_air_date?: string
   poster_path: null | string
   genre_ids: number[]
-  original_language: Language
+  original_language: Language | string
   backdrop_path: null | string
   overview: string
   origin_country: Country[]
@@ -28,6 +28,7 @@ export interface PersonTvCredit {
   job?: string
 }
 
+// cSpell:disable
 export const mockPersonTvCredits: PersonTvCredits = {
   cast: [
     {
@@ -39,7 +40,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       first_air_date: "2006-08-14",
       poster_path: "/qCOlMsNSMDF5ZSvyzLJnFCqehkZ.jpg",
       genre_ids: [10763],
-      original_language: "en",
+      original_language: Language.English,
       backdrop_path: "/1m3272Z1gOycFwJCM9hgFKfCiPZ.jpg",
       overview:
         "A topical magazine-style daily television programme broadcast live on BBC One and BBC One HD. The programme is currently hosted by Alex Jones and Matt Baker from Monday-Thursday, with Chris Evans appearing instead of Baker on Fridays and relief presenters appearing when required.",
@@ -56,7 +57,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 1679,
       name: "The Tracey Ullman Show",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "The Tracey Ullman Show",
       overview:
         "The Tracey Ullman Show is an American television variety show, hosted by British-born comedian and onetime pop singer Tracey Ullman. It debuted on April 5, 1987 as the Fox network's second primetime series after Married... with Children, and ran until May 26, 1990. The show is produced by Gracie Films and 20th Century Fox Television. The show blended sketch comedy shorts with many musical numbers, featuring choreography by Paula Abdul. The show also produced The Simpsons shorts before it spun off into its own show, which was also produced by Gracie Films and 20th Century Fox Television.",
@@ -70,7 +71,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
     },
     {
       genre_ids: [10763, 10767],
-      original_language: "en",
+      original_language: Language.English,
       poster_path: "/xlWdasY9oYg3OO5VTNqlPFftgya.jpg",
       vote_average: 5.8,
       original_name: "Today",
@@ -94,7 +95,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 1900,
       name: "LIVE with Kelly and Ryan",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "LIVE with Kelly and Ryan",
       overview:
         "A morning talk show with A-list celebrity guests, top-notch performances and one-of-a-kind segments that are unrivaled on daytime television, plus spontaneous, hilarious and unpredictable talk.",
@@ -113,7 +114,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 2221,
       name: "The View",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "The View",
       overview:
         "ABC Daytime's morning chatfest, currently featuring Whoopi Goldberg, Joy Behar, Sunny Hostin, Meghan McCain, and Abby Huntsman, discussing the most exciting events of the day. Hot topics in the news, the best experts in their field, celebrity interviews and general entertainment are all part of The View.",
@@ -134,7 +135,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       first_air_date: "1992-05-25",
       poster_path: "/irA6aNsYCpN7Uo4EDQo8Fu6uzh7.jpg",
       genre_ids: [35, 10767],
-      original_language: "en",
+      original_language: Language.English,
       backdrop_path: "/lN81B3YJ0cwnII3UJaHoIHwNN4J.jpg",
       overview:
         "The Tonight Show with Jay Leno is an American late-night talk show hosted by Jay Leno that initially aired from May 25, 1992 to May 29, 2009, and resumed production on March 1, 2010. The fourth incarnation of the Tonight Show franchise made its debut on May 25, 1992, three days following Johnny Carson's retirement as host of the program. The program originates from NBC Studios in Burbank, California, and is broadcast Monday through Friday at 11:35 PM in the Eastern and Pacific time zones. Unlike Carson or his predecessor Jack Paar, Leno only once utilized a guest host, preferring to host the series by himself.\n\nOn April 26, 1999, the show began broadcasting in 1080i HDTV, becoming the first American nightly talk show to be shot in high definition. The show is shot in 16:9 aspect ratio.\n\nThe series, which followed the same basic format as that of his predecessors, ran until May 29, 2009, after which Leno was succeeded by Conan O'Brien. NBC signed Leno to a new deal for a nightly talk show in the 10:00 pm ET timeslot. The primetime series, titled The Jay Leno Show, debuted on September 14, 2009, following a similar format to the Leno incarnation of Tonight.",
@@ -151,7 +152,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 3180,
       name: "Night Heat",
       origin_country: ["CA"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Night Heat",
       overview:
         "Night Heat is a Canadian police drama series\n\nThe show starred Allan Royal as journalist Tom Kirkwood, who chronicled the nightly police beat of detectives Kevin O'Brien and Frank Giambone.",
@@ -170,7 +171,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 3180,
       name: "Night Heat",
       origin_country: ["CA"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Night Heat",
       overview:
         "Night Heat is a Canadian police drama series\n\nThe show starred Allan Royal as journalist Tom Kirkwood, who chronicled the nightly police beat of detectives Kevin O'Brien and Frank Giambone.",
@@ -189,7 +190,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 10946,
       name: "Celebrities Uncensored",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Celebrities Uncensored",
       overview:
         "Celebrities Uncensored is a TV program on the E! network that edited together amusing paparazzi footage of celebrities, usually in public places such as public sidewalks, restaurants, nightclubs, etc. The celebrities were often friendly, but sometimes their more unfriendly antics were featured in an amusing and entertaining way. It was very popular with stars on the rise and created a stir in the Hollywood community. Paris Hilton was first brought to the public's attention by this show.",
@@ -208,7 +209,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 14920,
       name: "Hangin' In",
       origin_country: ["CA"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Hangin' In",
       overview:
         "Hangin' In is a Canadian television sitcom which aired on CBC from 1981 to 1987. It also aired briefly in syndication in the United States. Canadian producer Jack Humphrey developed Hangin' In and served as executive producer for the show.",
@@ -227,7 +228,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 27023,
       name: "The Oscars",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "The Oscars",
       overview:
         "An annual American awards ceremony honoring cinematic achievements in the film industry. The various category winners are awarded a copy of a statuette, officially the Academy Award of Merit, that is better known by its nickname Oscar.",
@@ -246,7 +247,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 30240,
       name: "Comedy Factory",
       origin_country: ["CA"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Comedy Factory",
       overview: "",
       poster_path: null,
@@ -266,7 +267,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       first_air_date: "2008-09-22",
       poster_path: "/amfW7NzijzI7Kj27Od4yCRzNSAq.jpg",
       genre_ids: [35],
-      original_language: "en",
+      original_language: Language.English,
       backdrop_path: null,
       overview:
         'Easy to Assemble is a Webseries created by and starring Illeana Douglas, and sponsored by furniture store IKEA.\n\nDouglas plays a fictional version of herself trying to quit acting and work a "real job" at the IKEA in Burbank, CA. She soon finds she cannot leave Hollywood behind when fellow actress Justine Bateman starts an internet talk show called "40 and Bitter" on the floor of IKEA.\n\nThe series has had several notable guest stars, including Jeff Goldblum, Keanu Reeves, Jane Lynch, Justine Bateman, Tim Meadows, Cheri Oteri, Tom Arnold, Ed Begley, Jr., Kevin Pollak, Fred Willard, Daryl Sabara, Ricki Lake, David Henrie, Patricia Heaton, and Eric Lange.',
@@ -283,7 +284,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 1489,
       name: "Jimmy Kimmel Live!",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Jimmy Kimmel Live!",
       overview:
         "Jimmy Kimmel Live! is an American late-night talk show, created and hosted by Jimmy Kimmel and broadcast on ABC.",
@@ -302,7 +303,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 3739,
       name: "E! True Hollywood Story",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "E! True Hollywood Story",
       overview:
         'E! True Hollywood Story is an American documentary series on E! that deals with famous Hollywood celebrities, movies, TV shows and also well-known public figures. Among the topics covered on the program include salacious re-tellings of Hollywood secrets, show-biz scandals, celebrity murders and mysteries, porn-star biographies, and "where-are-they-now?" investigations of former child stars. It frequently features in-depth interviews, actual courtroom footage, and dramatic reenactments. When aired on the E! network, episodes will be updated to reflect the current life or status of the subject.',
@@ -321,7 +322,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 4469,
       name: "MADtv",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "MADtv",
       overview:
         "MADtv is an American sketch comedy television series originally inspired by Mad magazine. The one-hour show aired Saturday nights on Fox.",
@@ -343,7 +344,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       backdrop_path: "/gXg7oDMIa4y4OKTsd1FSf1WIPBr.jpg",
       original_name: "Unscripted",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       vote_count: 1,
       poster_path: "/7Pl4nmauF6M9lbH3cssYMUQsToC.jpg",
       genre_ids: [18, 35],
@@ -357,7 +358,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       backdrop_path: "/hvLjMoZ9StBSeSYPAZBlrwU0ifR.jpg",
       id: 35006,
       name: "Bill & Ted's Excellent Adventures",
-      original_language: "en",
+      original_language: Language.English,
       poster_path: "/6JhwrUjk905wmhp7s7B0UeuyOma.jpg",
       vote_average: 6.7,
       vote_count: 12,
@@ -374,7 +375,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
     {
       first_air_date: "2007-02-22",
       genre_ids: [35, 10767],
-      original_language: "en",
+      original_language: Language.English,
       poster_path: "/vrbqaBXB8AALynQzpWz6JdCPEJS.jpg",
       name: "The Graham Norton Show",
       original_name: "The Graham Norton Show",
@@ -434,7 +435,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 90169,
       name: "Rain",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Rain",
       overview:
         "An assassin specializes in making his hits look like they've died from natural causes.",
@@ -468,7 +469,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
     {
       backdrop_path: "/7RizgNN3qH1vjDbhWrJKFoxPfrT.jpg",
       genre_ids: [99, 10765],
-      original_language: "en",
+      original_language: Language.English,
       poster_path: "/qhanotOZnOdgmCZonug5anT0mFo.jpg",
       id: 79003,
       vote_count: 27,
@@ -497,7 +498,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       vote_average: 6.9,
       genre_ids: [10764, 99],
       first_air_date: "2015-10-07",
-      original_language: "en",
+      original_language: Language.English,
       popularity: 10.584,
       character: "Himself",
       credit_id: "5dcfbcae2866fa001886a40e",
@@ -510,7 +511,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 95390,
       name: "Car Matchmaker with Spike Feresten",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Car Matchmaker with Spike Feresten",
       overview:
         "TV writer, talk show host and comedian, Spike Feresten, is the guy to see when car shopping. He meets someone needing a car and then draws on two decades of expertise and instinct to find three different cars perfectly suited to the buyer.",
@@ -529,7 +530,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 106081,
       name: "A World of Calm",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "A World of Calm",
       overview:
         "A timely antidote for our modern lives, this revolutionary series takes audiences on an immersive audiovisual journey designed to help you relax and transform how you feel. Each episode is brought to life by narration from some of the smoothest voices in Hollywood.",
@@ -548,7 +549,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 67642,
       name: "Swedish Dicks",
       origin_country: ["SE"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Swedish Dicks",
       overview:
         "Two unlicensed Swedish private investigators try to make a living in Los Angeles.",
@@ -569,7 +570,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       first_air_date: "1992-06-12",
       poster_path: null,
       genre_ids: [99],
-      original_language: "en",
+      original_language: Language.English,
       backdrop_path: null,
       overview:
         "HBO First Look is an American television show on HBO that chronicles up and coming movies. It first started in 1992 with a documentary on A League of Their Own starring Tom Hanks, and still airs today. The series shows behind-the-scenes looks at the filming and interviews with the actors. The show is part documentary and part advertisement. It airs on HBO with no set schedule.",
@@ -586,7 +587,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 19041,
       name: "Conquest",
       origin_country: [],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Conquest",
       overview: "",
       poster_path: null,
@@ -623,7 +624,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 59941,
       name: "The Tonight Show Starring Jimmy Fallon",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "The Tonight Show Starring Jimmy Fallon",
       overview:
         "After Jay Leno's second retirement from the program, Jimmy Fallon stepped in as his permanent replacement. After 42 years in Los Angeles the program was brought back to New York.",
@@ -642,7 +643,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 121505,
       name: "BRZRKR",
       origin_country: [],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "BRZRKR",
       overview:
         "A brutally epic saga about an immortal warrior's 80,000 year fight through the ages.",
@@ -661,7 +662,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 1900,
       name: "LIVE with Kelly and Ryan",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "LIVE with Kelly and Ryan",
       overview:
         "A morning talk show with A-list celebrity guests, top-notch performances and one-of-a-kind segments that are unrivaled on daytime television, plus spontaneous, hilarious and unpredictable talk.",
@@ -680,7 +681,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 63770,
       name: "The Late Show with Stephen Colbert",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "The Late Show with Stephen Colbert",
       overview:
         'Improv actor and comic Stephen Colbert leaves his "The Colbert Report" character behind as he makes his long-awaited return to television. As the host of The Late Show franchise redux - taped at the historic Ed Sullivan Theatre at New York - Colbert talks to actors, athletes, politicians, comics, artists and musicians as himself for the first time. Loyal fans, however, will also be treated to consistency as Colbert remains backed by many members of his writing and digital team from his former venture. Julliard-trained Jon Batiste serves as the bandleader.',
@@ -700,7 +701,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       backdrop_path: null,
       genre_ids: [18, 80, 9648],
       name: "The Devil in the White City",
-      original_language: "en",
+      original_language: Language.English,
       poster_path: null,
       vote_count: 0,
       vote_average: 0.0,
@@ -722,7 +723,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       vote_count: 4,
       overview:
         "Jada Pinkett Smith, her daughter Willow, and mother Adrienne – three generations of women open their home for a series of candid conversations with family and friends.",
-      original_language: "en",
+      original_language: Language.English,
       id: 83216,
       popularity: 6.719,
       character: "Self",
@@ -732,7 +733,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
     {
       backdrop_path: "/iu2GYGDglHEv1gYiwwwx3MA2Evt.jpg",
       genre_ids: [10767],
-      original_language: "en",
+      original_language: Language.English,
       poster_path: "/fpcYoqpnTmYm84sXcjXvrs7VtTz.jpg",
       first_air_date: "2020-09-14",
       vote_average: 0.0,
@@ -757,7 +758,7 @@ export const mockPersonTvCredits: PersonTvCredits = {
       id: 90169,
       name: "Rain",
       origin_country: ["US"],
-      original_language: "en",
+      original_language: Language.English,
       original_name: "Rain",
       overview:
         "An assassin specializes in making his hits look like they've died from natural causes.",
