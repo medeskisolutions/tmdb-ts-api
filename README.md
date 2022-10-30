@@ -6,6 +6,50 @@
 **WARNING:** This is a work-in-progress (`v0.0.x`). Once `v1` is released I'll
 consider the API stable. For now, there may be lots of changes.
 
+## Upcoming
+
+- [ ] Convert to monorepo
+  - [ ] Add changeset CLI to monorepo
+- [ ] Caching
+  - [ ] Add image pre-render
+  - [ ] Add ability to cache image URLS
+  - [ ] Add ability to cache api responses
+- [ ] Testing
+  - [ ] Add Vitest unit tests to package
+  - [ ] Test TMDB API calls with zod schema validator
+  - [ ] Add Cypress integration tests to UI components (and/or js-dom Vietest tests) 
+- [ ] Add sqlite3 database cache to package (bring your own cache)
+- [ ] UI
+  - [ ] Reusable React components (for examples and docs)
+  - [ ] Ability to overwrite default TailwindCSS styles (or extend)
+  - [ ] Ability to set TailwindCSS theme
+  - [ ] Ability to set link component (for Next.js vs remix)
+- [ ] Add Astro site (docs + examples)
+  - [ ] Showcase examples
+  - [ ] Document how to use API
+  - [ ] Compare performance of examples
+  - [ ] Compare hosting costs of examples
+  - [ ] Add page transition element (see [example](https://www.maxiferreira.com/blog/astro-page-transitions/))
+- [ ] Add NextJS Example
+  - [ ] with proxy URL
+  - [ ] Nested layout
+  - [ ] OG image
+  - [ ] Server components
+  - [ ] Incremental Static Regeneration (compared to server components)
+- [ ] tRPC example (NextJS + React Native)
+  - [ ] with proxy URL
+  - [ ] with tRPC
+  - [ ] [cache React Native images](https://blog.logrocket.com/caching-images-react-native-tutorial-with-examples/)
+- [ ] Add Fly.io Remix example
+  - [ ] with proxy URL
+  - [ ] fly.io sqlite3 cache
+- [ ] Add Cloudflare Remix example
+  - [ ] with proxy URL
+  - [ ] [Cloudflare Workers KV](https://www.cloudflare.com/products/workers-kv/)
+  - [ ] [Cloudflare images](https://www.cloudflare.com/products/cloudflare-images/)
+- [ ] Astro example
+  - [ ] with proxy URL (SSR)
+
 ## How to install
 
 Install the `tmdb-ts-api` npm package.
