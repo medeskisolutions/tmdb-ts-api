@@ -14,32 +14,42 @@
  * - https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
  * - https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
  */
-export default class Images {
-  static base_url = "http://image.tmdb.org/t/p/"
-  static secure_base_url = "https://image.tmdb.org/t/p/"
+const base_url = "http://image.tmdb.org/t/p/"
+const secure_base_url = "https://image.tmdb.org/t/p/"
 
-  static backdropSrc(
-    backdrop_path: string,
-    size: BACKDROP_SIZE = "w300",
-  ): string {
-    return `${this.secure_base_url}${size}/${backdrop_path}`
-  }
+const src = (path: string, size: string, isSecure = true) =>
+  `${isSecure ? secure_base_url : base_url}${size}/${path}`
 
-  static logoSrc(logo_path: string, size: LOGO_SIZE = "w92"): string {
-    return `${this.secure_base_url}${size}/${logo_path}`
-  }
+export function backdropSrc(
+  backdrop_path: string,
+  size: BACKDROP_SIZE = "w300",
+): string {
+  return src(backdrop_path, size)
+}
 
-  static posterSrc(poster_path: string, size: POSTER_SIZE = "w185"): string {
-    return `${this.secure_base_url}${size}/${poster_path}`
-  }
+export function logoSrc(logo_path: string, size: LOGO_SIZE = "w92"): string {
+  return src(logo_path, size)
+}
 
-  static profileSrc(profile_path: string, size: PROFILE_SIZE = "w185"): string {
-    return `${this.secure_base_url}${size}/${profile_path}`
-  }
+export function posterSrc(
+  poster_path: string,
+  size: POSTER_SIZE = "w185",
+): string {
+  return src(poster_path, size)
+}
 
-  static stillSrc(still_path: string, size: STILL_SIZE = "w185"): string {
-    return `${this.secure_base_url}${size}/${still_path}`
-  }
+export function profileSrc(
+  profile_path: string,
+  size: PROFILE_SIZE = "w185",
+): string {
+  return src(profile_path, size)
+}
+
+export function stillSrc(
+  still_path: string,
+  size: STILL_SIZE = "w185",
+): string {
+  return src(still_path, size)
 }
 
 type BACKDROP_SIZE = "w300" | "w780" | "w1280" | "original"

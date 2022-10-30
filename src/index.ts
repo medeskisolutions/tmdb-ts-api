@@ -10,7 +10,6 @@ import Discover from "./discover"
 import Find from "./find"
 import Genres from "./genres"
 import GuestSession from "./guestSession"
-import Images from "./images"
 import Keyword from "./keyword"
 import List from "./lists"
 import Movie from "./movie"
@@ -51,7 +50,6 @@ export class Tmdb {
   find: Find
   genres: Genres
   guestSession: GuestSession
-  images: Images
   keyword: Keyword
   list: List
   movie: Movie
@@ -78,7 +76,6 @@ export class Tmdb {
     this.find = new Find(options)
     this.genres = new Genres(options)
     this.guestSession = new GuestSession(options)
-    this.images = new Images()
     this.keyword = new Keyword(options)
     this.list = new List(options)
     this.movie = new Movie(options)
@@ -107,7 +104,6 @@ export {
   Find,
   Genres,
   GuestSession,
-  Images,
   Keyword,
   List,
   Movie,
