@@ -1,10 +1,10 @@
-name: 🌎 Publish Package to npm
+name: 🌎 Publish package to npm
 on: 
   release:
     types: [created]
 jobs:
   publish:
-    name: "Publish to npmjs"
+    name: 🌎 Publish package to npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,12 +15,14 @@ jobs:
         with:
           node-version: 16
           cache: 'pnpm'
-      - run: pnpm install
+
+      - name: 📦 install packages (with pnpm)
+        run: pnpm install
 
       - name: 🧰 Build package
         run: pnpm build
 
-      - name: 🌎 Publish package
-      - run: pnpm publish
+      - name: 🌎 Publish package (to npm)
+        run: pnpm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
