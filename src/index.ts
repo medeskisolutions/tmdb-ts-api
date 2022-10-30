@@ -94,3 +94,58 @@ export class Tmdb {
     this.watchProviders = new WatchProviders(options)
   }
 }
+
+export {
+  Authentication,
+  Certifications,
+  Changes,
+  Collection,
+  Company,
+  Configuration,
+  Credit,
+  Discover,
+  Find,
+  Genres,
+  GuestSession,
+  Images,
+  Keyword,
+  List,
+  Movie,
+  Movies,
+  Network,
+  People,
+  Person,
+  Review,
+  Search,
+  Trending,
+  TvShow,
+  TvShows,
+  WatchProviders,
+}
+
+export * from "./api"
+export * from "./authentication"
+export * from "./certifications"
+export * from "./changes"
+export * from "./collection"
+export * from "./company"
+export * from "./configuration"
+export * from "./credit"
+export * from "./discover"
+export * from "./find"
+export * from "./genres"
+export * from "./guestSession"
+export * from "./images"
+export * from "./keyword"
+export * from "./lists"
+export * from "./movie"
+export * from "./movies"
+export * from "./network"
+export * from "./people"
+export * from "./person"
+export * from "./review"
+export * from "./search"
+export * from "./trending"
+export * from "./tvShow"
+export * from "./tvShows"
+export * from "./watchProviders"
