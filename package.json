@@ -6,6 +6,9 @@
   "description": "A TypeScript API for working with The Movie Database API (tmdb)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest --watch"

@@ -1,5 +1,5 @@
-name: Publish Package to npmjs
-on:
+name: 🌎 Publish Package to npm
+on: 
   release:
     types: [created]
 jobs:
@@ -7,14 +7,20 @@ jobs:
     name: "Publish to npmjs"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.4
         with:
-          node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
-      - run: yarn install --immutable --immutable-cache --check-cache
-      - run: yarn build
-      - run: npm publish
+          version: 7
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+      - run: pnpm install
+
+      - name: 🧰 Build package
+        run: pnpm build
+
+      - name: 🌎 Publish package
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
