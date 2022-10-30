@@ -1,5 +1,5 @@
 import { Api } from "./api"
-import { ApiConfiguration, mockApiConfiguration } from "./configuration/api"
+import { ApiConfiguration } from "./configuration/api"
 import {
   CountriesConfiguration,
   mockCountriesConfiguration,
@@ -27,13 +27,9 @@ export default class Configuration extends Api {
    *
    * @link https://developers.themoviedb.org/3/configuration/get-api-configuration
    */
-  async getApiConfiguration() {
-    return await this.get<ApiConfiguration>(
-      `/configuration`,
-      {},
-      mockApiConfiguration,
-    )
-  }
+  // async getApiConfiguration() {
+  //   return await this.get<ApiConfiguration>(`/configuration`, {})
+  // }
 
   /**
    * Get the list of countries (ISO 3166-1 tags) used throughout TMDB.
